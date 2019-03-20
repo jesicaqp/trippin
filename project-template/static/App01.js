@@ -1,4 +1,4 @@
-"use strict";
+'use strict';
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
@@ -12,28 +12,49 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 var state = [];
 
 // This grabs the DOM element to be used to mount React components.
-var contentNode = document.getElementById("contents");
+var contentNode = document.getElementById('contents');
+var contentNode2 = document.getElementById('signup');
 
 var MyComponent = function (_React$Component) {
   _inherits(MyComponent, _React$Component);
 
-  function MyComponent() {
+  function MyComponent(props) {
     _classCallCheck(this, MyComponent);
 
-    return _possibleConstructorReturn(this, (MyComponent.__proto__ || Object.getPrototypeOf(MyComponent)).call(this));
+    var _this = _possibleConstructorReturn(this, (MyComponent.__proto__ || Object.getPrototypeOf(MyComponent)).call(this, props));
+
+    _this.state = { value: '' };
+
+    _this.handleChange = _this.handleChange.bind(_this);
+    _this.handleSubmit = _this.handleSubmit.bind(_this);
+    return _this;
   }
 
   _createClass(MyComponent, [{
-    key: "render",
+    key: 'handleChange',
+    value: function handleChange(event) {
+      this.setState({ value: event.target.value });
+    }
+  }, {
+    key: 'handleSubmit',
+    value: function handleSubmit(event) {
+      alert('A name was submitted: ' + this.state.value);
+      event.preventDefault();
+    }
+  }, {
+    key: 'render',
     value: function render() {
       return React.createElement(
-        "div",
-        null,
+        'form',
+        { onSubmit: this.handleSubmit },
         React.createElement(
-          "h1",
+          'label',
           null,
-          "Sign Up"
-        )
+          'Name:',
+          React.createElement('input', { type: 'text', value: this.state.value, onChange: this.handleChange })
+        ),
+        React.createElement('br', null),
+        React.createElement('input', { type: 'submit', value: 'Submit' })
       );
     }
   }]);
@@ -41,7 +62,35 @@ var MyComponent = function (_React$Component) {
   return MyComponent;
 }(React.Component);
 
+var TitlePage = function (_React$Component2) {
+  _inherits(TitlePage, _React$Component2);
+
+  function TitlePage() {
+    _classCallCheck(this, TitlePage);
+
+    return _possibleConstructorReturn(this, (TitlePage.__proto__ || Object.getPrototypeOf(TitlePage)).call(this));
+  }
+
+  _createClass(TitlePage, [{
+    key: 'render',
+    value: function render() {
+      return React.createElement(
+        'div',
+        null,
+        React.createElement(
+          'h1',
+          null,
+          'Sign Up'
+        )
+      );
+    }
+  }]);
+
+  return TitlePage;
+}(React.Component);
+
 // This renders the JSX component inside the content node:
 
 
 ReactDOM.render(React.createElement(MyComponent, null), contentNode);
+ReactDOM.render(React.createElement(TitlePage, null), contentNode2);
