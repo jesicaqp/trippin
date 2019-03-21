@@ -5,42 +5,10 @@ const state = [
 
 // This grabs the DOM element to be used to mount React components.
 var contentNode = document.getElementById('contents');
-var contentNode2 = document.getElementById('signup');
+var contentNode2 = document.getElementById('login');
+var contentNode3 = document.getElementById('signup');
 
 class MyComponent extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {value: ''};
-
-    this.handleChange = this.handleChange.bind(this);
-    this.handleSubmit = this.handleSubmit.bind(this);
-  }
-
-  handleChange(event) {
-    this.setState({value: event.target.value});
-  }
-
-  handleSubmit(event) {
-    alert('A name was submitted: ' + this.state.value);
-    event.preventDefault();
-  }
-
-  render() {
-    return (
-      <form onSubmit={this.handleSubmit}>
-        <label>
-          Name:
-          <input type="text" value={this.state.value} onChange={this.handleChange} />
-        </label>
-        <br>
-        </br>
-        <input type="submit" value="Submit" />
-      </form>
-    );
-  }
-}
-
-class TitlePage extends React.Component {
   constructor() {
     super();
   }
@@ -48,7 +16,40 @@ class TitlePage extends React.Component {
   render() {
     return (
       <div>
-        <h1>Sign Up</h1>
+        <h1>Login In</h1>
+      </div>
+    );
+  }
+}
+
+class Login extends React.Component {
+  constructor() {
+    super();
+  }
+
+  render() {
+    return (
+    <form>
+      <label for="uname"><b>Username</b></label>
+      <input type="text" placeholder="Enter Username" name="uname" />
+
+      <label for="psw"><b>Password</b></label>
+      <input type="password" placeholder="Enter Password" name="psw" />
+        
+      </form>
+    );
+  }
+}
+
+class SignUp extends React.Component {
+  constructor() {
+    super();
+  }
+
+  render() {
+    return (
+      <div>
+        <button>Sign Up </button>
       </div>
     );
   }
@@ -56,4 +57,6 @@ class TitlePage extends React.Component {
 
 // This renders the JSX component inside the content node:
 ReactDOM.render(<MyComponent />, contentNode);
-ReactDOM.render(<TitlePage />, contentNode2);
+ReactDOM.render(<Login />, contentNode2);
+ReactDOM.render(<SignUp />, contentNode3);
+

@@ -13,65 +13,19 @@ var state = [];
 
 // This grabs the DOM element to be used to mount React components.
 var contentNode = document.getElementById('contents');
-var contentNode2 = document.getElementById('signup');
+var contentNode2 = document.getElementById('login');
+var contentNode3 = document.getElementById('signup');
 
 var MyComponent = function (_React$Component) {
   _inherits(MyComponent, _React$Component);
 
-  function MyComponent(props) {
+  function MyComponent() {
     _classCallCheck(this, MyComponent);
 
-    var _this = _possibleConstructorReturn(this, (MyComponent.__proto__ || Object.getPrototypeOf(MyComponent)).call(this, props));
-
-    _this.state = { value: '' };
-
-    _this.handleChange = _this.handleChange.bind(_this);
-    _this.handleSubmit = _this.handleSubmit.bind(_this);
-    return _this;
+    return _possibleConstructorReturn(this, (MyComponent.__proto__ || Object.getPrototypeOf(MyComponent)).call(this));
   }
 
   _createClass(MyComponent, [{
-    key: 'handleChange',
-    value: function handleChange(event) {
-      this.setState({ value: event.target.value });
-    }
-  }, {
-    key: 'handleSubmit',
-    value: function handleSubmit(event) {
-      alert('A name was submitted: ' + this.state.value);
-      event.preventDefault();
-    }
-  }, {
-    key: 'render',
-    value: function render() {
-      return React.createElement(
-        'form',
-        { onSubmit: this.handleSubmit },
-        React.createElement(
-          'label',
-          null,
-          'Name:',
-          React.createElement('input', { type: 'text', value: this.state.value, onChange: this.handleChange })
-        ),
-        React.createElement('br', null),
-        React.createElement('input', { type: 'submit', value: 'Submit' })
-      );
-    }
-  }]);
-
-  return MyComponent;
-}(React.Component);
-
-var TitlePage = function (_React$Component2) {
-  _inherits(TitlePage, _React$Component2);
-
-  function TitlePage() {
-    _classCallCheck(this, TitlePage);
-
-    return _possibleConstructorReturn(this, (TitlePage.__proto__ || Object.getPrototypeOf(TitlePage)).call(this));
-  }
-
-  _createClass(TitlePage, [{
     key: 'render',
     value: function render() {
       return React.createElement(
@@ -80,17 +34,87 @@ var TitlePage = function (_React$Component2) {
         React.createElement(
           'h1',
           null,
-          'Sign Up'
+          'Login In'
         )
       );
     }
   }]);
 
-  return TitlePage;
+  return MyComponent;
+}(React.Component);
+
+var Login = function (_React$Component2) {
+  _inherits(Login, _React$Component2);
+
+  function Login() {
+    _classCallCheck(this, Login);
+
+    return _possibleConstructorReturn(this, (Login.__proto__ || Object.getPrototypeOf(Login)).call(this));
+  }
+
+  _createClass(Login, [{
+    key: 'render',
+    value: function render() {
+      return React.createElement(
+        'form',
+        null,
+        React.createElement(
+          'label',
+          { 'for': 'uname' },
+          React.createElement(
+            'b',
+            null,
+            'Username'
+          )
+        ),
+        React.createElement('input', { type: 'text', placeholder: 'Enter Username', name: 'uname' }),
+        React.createElement(
+          'label',
+          { 'for': 'psw' },
+          React.createElement(
+            'b',
+            null,
+            'Password'
+          )
+        ),
+        React.createElement('input', { type: 'password', placeholder: 'Enter Password', name: 'psw' })
+      );
+    }
+  }]);
+
+  return Login;
+}(React.Component);
+
+var SignUp = function (_React$Component3) {
+  _inherits(SignUp, _React$Component3);
+
+  function SignUp() {
+    _classCallCheck(this, SignUp);
+
+    return _possibleConstructorReturn(this, (SignUp.__proto__ || Object.getPrototypeOf(SignUp)).call(this));
+  }
+
+  _createClass(SignUp, [{
+    key: 'render',
+    value: function render() {
+      return React.createElement(
+        'div',
+        null,
+        React.createElement(
+          'button',
+          null,
+          'Sign Up '
+        )
+      );
+    }
+  }]);
+
+  return SignUp;
 }(React.Component);
 
 // This renders the JSX component inside the content node:
 
 
 ReactDOM.render(React.createElement(MyComponent, null), contentNode);
-ReactDOM.render(React.createElement(TitlePage, null), contentNode2);
+ReactDOM.render(React.createElement(Login, null), contentNode2);
+ReactDOM.render(React.createElement(SignUp, null), contentNode3);
