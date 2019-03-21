@@ -49,6 +49,7 @@ class SignUp extends React.Component {
   render() {
     return (
       <div>
+        <button><a href="/view02.html">Login</a> </button>
         <button>Sign Up </button>
       </div>
     );
