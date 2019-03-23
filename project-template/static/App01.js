@@ -107,13 +107,16 @@ var SignUp = function (_React$Component3) {
             'a',
             { href: '/view02.html' },
             'Login'
-          ),
-          ' '
+          )
         ),
         React.createElement(
           'button',
           null,
-          'Sign Up '
+          React.createElement(
+            'a',
+            { href: '/view04.html' },
+            'Sign Up'
+          )
         )
       );
     }
