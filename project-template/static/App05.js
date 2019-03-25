@@ -34,7 +34,7 @@ var MyComponent = function (_React$Component) {
         React.createElement(
           'h1',
           null,
-          'Create Event'
+          'Event Name: Trip to the Cape'
         )
       );
     }
@@ -56,58 +56,67 @@ var EventInfo = function (_React$Component2) {
     key: 'render',
     value: function render() {
       return React.createElement(
-        'form',
+        'div',
         null,
-        React.createElement(
-          'label',
-          { 'for': 'ename' },
-          React.createElement(
-            'b',
-            null,
-            'Event Name'
-          )
-        ),
-        React.createElement('input', { type: 'text', placeholder: 'Enter Event Name', name: 'ename' }),
         React.createElement(
           'label',
           { 'for': 'edate' },
           React.createElement(
-            'b',
+            'h3',
             null,
-            'Event Date'
+            React.createElement(
+              'b',
+              null,
+              'Event Date'
+            )
           )
         ),
-        React.createElement('input', { type: 'date', placeholder: 'Enter Event Date', name: 'edate' }),
+        React.createElement(
+          'text',
+          null,
+          '03/25/2019 to 04/02/2019'
+        ),
         React.createElement(
           'label',
           { 'for': 'elocation' },
           React.createElement(
-            'b',
+            'h3',
             null,
-            'Event Location'
+            React.createElement(
+              'b',
+              null,
+              'Event Location'
+            )
           )
         ),
-        React.createElement('input', { type: 'text', placeholder: 'Enter Event Location', name: 'elocation' }),
         React.createElement(
-          'label',
-          { 'for': 'edescription' },
-          React.createElement(
-            'b',
-            null,
-            'Event Description'
-          )
+          'text',
+          null,
+          'This event will take place in Cape Cod, Massachusetts.'
         ),
-        React.createElement('input', { type: 'text', placeholder: 'Enter Event Description', name: 'edescription' }),
+        React.createElement(
+          'text',
+          null,
+          'A week of fun and relaxation for students before the second round of midterms. We will be celebrating the start of spring and the start of warmer temperatures and sunny skies. '
+        ),
         React.createElement(
           'label',
           { 'for': 'einvitelist' },
           React.createElement(
-            'b',
+            'h3',
             null,
-            'Event Attendee List'
+            React.createElement(
+              'b',
+              null,
+              'Event Attendee List'
+            )
           )
         ),
-        React.createElement('input', { type: 'text', placeholder: 'Enter Event Attendee List', name: 'einvitelist' })
+        React.createElement(
+          'text',
+          null,
+          'Jesica Quinones, Aibhilin Fitzpatrick, Arushi Ahmed.'
+        )
       );
     }
   }]);
@@ -135,8 +144,8 @@ var EventButtons = function (_React$Component3) {
           null,
           React.createElement(
             'a',
-            { href: '/view05.html' },
-            'Save'
+            { href: '/view03.html' },
+            'EDIT'
           )
         ),
         React.createElement(
@@ -144,8 +153,8 @@ var EventButtons = function (_React$Component3) {
           null,
           React.createElement(
             'a',
-            { href: '/view04.html' },
-            'Cancel'
+            { href: '/view01.html' },
+            'SHARE'
           )
         )
       );

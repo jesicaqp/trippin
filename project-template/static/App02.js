@@ -32,7 +32,7 @@ var MyComponent = function (_React$Component) {
         React.createElement(
           "h1",
           null,
-          "My View 02"
+          "View 02"
         )
       );
     }
@@ -45,3 +45,5 @@ var MyComponent = function (_React$Component) {
 
 
 ReactDOM.render(React.createElement(MyComponent, null), contentNode);
+ReactDOM.render(React.createElement(EventInfo, null), contentNode2);
+ReactDOM.render(React.createElement(EventButtons, null), contentNode3);

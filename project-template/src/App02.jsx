@@ -14,7 +14,9 @@ class MyComponent extends React.Component {
   render() {
     return (
       <div>
-        <h1>My View 02</h1>
+        
+        <h1>View 02</h1>
+
       </div>
     );
   }
@@ -22,3 +24,7 @@ class MyComponent extends React.Component {
 
 // This renders the JSX component inside the content node:
 ReactDOM.render(<MyComponent />, contentNode);
+ReactDOM.render(<EventInfo />, contentNode2);
+ReactDOM.render(<EventButtons />, contentNode3);
+
+
