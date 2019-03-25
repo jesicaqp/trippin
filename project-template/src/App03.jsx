@@ -59,7 +59,7 @@ class EventButtons extends React.Component {
     return (
       <div>
         <button><a href="/view05.html">Save</a></button>
-        <button><a href="/view04.html">Cancel</a></button>
+        <button><a href="/view02.html">Cancel</a></button>
       </div>
     );
   }

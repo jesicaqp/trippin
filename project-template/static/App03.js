@@ -144,7 +144,7 @@ var EventButtons = function (_React$Component3) {
           null,
           React.createElement(
             'a',
-            { href: '/view04.html' },
+            { href: '/view02.html' },
             'Cancel'
           )
         )
