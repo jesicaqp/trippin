@@ -37,6 +37,7 @@ class EventInfo extends React.Component {
       <label for="elocation"><h3><b>Event Location</b></h3></label>
       <text>This event will take place in Cape Cod, Massachusetts.</text>
      
+      <label for="edescritpion"><h3><b>Event Description</b></h3></label>
       <text>A week of fun and relaxation for students before the second round of midterms. We will be celebrating the start of spring and the start of warmer temperatures and sunny skies. </text>
 
       <label for="einvitelist"><h3><b>Event Attendee List</b></h3></label>

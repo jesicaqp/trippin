@@ -95,6 +95,19 @@ var EventInfo = function (_React$Component2) {
           'This event will take place in Cape Cod, Massachusetts.'
         ),
         React.createElement(
+          'label',
+          { 'for': 'edescritpion' },
+          React.createElement(
+            'h3',
+            null,
+            React.createElement(
+              'b',
+              null,
+              'Event Description'
+            )
+          )
+        ),
+        React.createElement(
           'text',
           null,
           'A week of fun and relaxation for students before the second round of midterms. We will be celebrating the start of spring and the start of warmer temperatures and sunny skies. '
