@@ -46,15 +46,23 @@ var MyComponent = function (_React$Component) {
 var Login = function (_React$Component2) {
   _inherits(Login, _React$Component2);
 
-  function Login() {
+  function Login(props) {
     _classCallCheck(this, Login);
 
-    return _possibleConstructorReturn(this, (Login.__proto__ || Object.getPrototypeOf(Login)).call(this));
+    var _this2 = _possibleConstructorReturn(this, (Login.__proto__ || Object.getPrototypeOf(Login)).call(this, props));
+
+    _this2.state = {
+      username: '',
+      password: ' '
+    };
+    return _this2;
   }
 
   _createClass(Login, [{
     key: 'render',
     value: function render() {
+      var _this3 = this;
+
       return React.createElement(
         'form',
         null,
@@ -67,7 +75,9 @@ var Login = function (_React$Component2) {
             'Username'
           )
         ),
-        React.createElement('input', { type: 'text', placeholder: 'Enter Username', name: 'uname' }),
+        React.createElement('input', { type: 'text', placeholder: 'Enter Username', name: 'uname', onChange: function onChange(event, newValue) {
+            return _this3.setState({ username: newValue });
+          } }),
         React.createElement(
           'label',
           { 'for': 'psw' },
@@ -77,7 +87,9 @@ var Login = function (_React$Component2) {
             'Password'
           )
         ),
-        React.createElement('input', { type: 'password', placeholder: 'Enter Password', name: 'psw' })
+        React.createElement('input', { type: 'password', placeholder: 'Enter Password', name: 'psw', onChange: function onChange(event, newValue) {
+            return _this3.setState({ password: newValue });
+          } })
       );
     }
   }]);
@@ -97,12 +109,16 @@ var SignUp = function (_React$Component3) {
   _createClass(SignUp, [{
     key: 'render',
     value: function render() {
+      var _this5 = this;
+
       return React.createElement(
         'div',
         null,
         React.createElement(
           'button',
-          null,
+          { onClick: function onClick(event) {
+              return _this5.handleClick(event);
+            } },
           React.createElement(
             'a',
             { href: '/view02.html' },
@@ -111,7 +127,9 @@ var SignUp = function (_React$Component3) {
         ),
         React.createElement(
           'button',
-          null,
+          { onClick: function onClick(event) {
+              return _this5.handleClick(event);
+            } },
           React.createElement(
             'a',
             { href: '/view04.html' },

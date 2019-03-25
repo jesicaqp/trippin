@@ -23,18 +23,22 @@ class MyComponent extends React.Component {
 }
 
 class Login extends React.Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
+    this.state={
+    username:'',
+    password:' '
+    };
   }
 
   render() {
     return (
     <form>
       <label for="uname"><b>Username</b></label>
-      <input type="text" placeholder="Enter Username" name="uname" />
+      <input type="text" placeholder="Enter Username" name="uname" onChange = {(event,newValue) => this.setState({username:newValue})}/>
 
       <label for="psw"><b>Password</b></label>
-      <input type="password" placeholder="Enter Password" name="psw" />
+      <input type="password" placeholder="Enter Password" name="psw"  onChange = {(event,newValue) => this.setState({password:newValue})}/>
         
       </form>
     );
@@ -49,8 +53,8 @@ class SignUp extends React.Component {
   render() {
     return (
       <div>
-        <button><a href="/view02.html">Login</a></button>
-        <button><a href="/view04.html">Sign Up</a></button>
+        <button onClick={(event) => this.handleClick(event)}><a href="/view02.html">Login</a></button>
+        <button onClick={(event) => this.handleClick(event)}><a href="/view04.html">Sign Up</a></button>
       </div>
     );
   }
