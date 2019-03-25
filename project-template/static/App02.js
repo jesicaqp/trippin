@@ -30,9 +30,27 @@ var MyComponent = function (_React$Component) {
         "div",
         null,
         React.createElement(
-          "h1",
+          "button",
+          { type: "button", "class": "btn btn-primary" },
+          React.createElement(
+            "a",
+            { href: "/view03.html" },
+            "Create Event +"
+          )
+        ),
+        React.createElement(
+          "center",
           null,
-          "View 02"
+          React.createElement(
+            "h1",
+            null,
+            "Calendar View"
+          )
+        ),
+        React.createElement(
+          "center",
+          null,
+          React.createElement("img", { src: "https://www.thewallworks.com/images/products/basic-calendar.JPG" })
         )
       );
     }
@@ -45,5 +63,3 @@ var MyComponent = function (_React$Component) {
 
 
 ReactDOM.render(React.createElement(MyComponent, null), contentNode);
-ReactDOM.render(React.createElement(EventInfo, null), contentNode2);
-ReactDOM.render(React.createElement(EventButtons, null), contentNode3);
