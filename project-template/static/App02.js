@@ -19,17 +19,17 @@ var Calender = React.createClass({
   displayName: "Calender",
 
   getInitialState: function getInitialState() {
-    return { next: false, perivous: true };
+    return { next: false, previous: true };
   },
   switch: function _switch(word) {
-    var perivous = void 0,
+    var previous = void 0,
         next = void 0;
-    if (word == "perivous") {
-      perivous = true;next = false;
+    if (word == "previous") {
+      previous = true;next = false;
     } else {
-      next = true;perivous = false;
+      next = true;previous = false;
     }
-    return this.setState({ next: next, perivous: perivous });
+    return this.setState({ next: next, previous: previous });
   },
 
   render: function render() {
@@ -41,16 +41,16 @@ var Calender = React.createClass({
         { id: "buttons" },
         React.createElement(
           "button",
-          { id: "signupButton", onClick: this.switch.bind(null, "perivous"), className: this.state.perivous },
-          "Perivous"
+          { id: "signupButton", onClick: this.switch.bind(null, "previous"), className: this.state.perivous },
+          "Previous Month"
         ),
         React.createElement(
           "button",
           { id: "loginButton", onClick: this.switch.bind(null, "next"), className: this.state.next },
-          "Next"
+          "Next Month"
         )
       ),
-      this.state.perivous ? React.createElement(Perivous, null) : null,
+      this.state.previous ? React.createElement(Previous, null) : null,
       this.state.next ? React.createElement(Next, null) : null
     );
   }
@@ -128,16 +128,16 @@ var Next = function (_React$Component2) {
   return Next;
 }(React.Component);
 
-var Perivous = function (_React$Component3) {
-  _inherits(Perivous, _React$Component3);
+var Previous = function (_React$Component3) {
+  _inherits(Previous, _React$Component3);
 
-  function Perivous() {
-    _classCallCheck(this, Perivous);
+  function Previous() {
+    _classCallCheck(this, Previous);
 
-    return _possibleConstructorReturn(this, (Perivous.__proto__ || Object.getPrototypeOf(Perivous)).call(this));
+    return _possibleConstructorReturn(this, (Previous.__proto__ || Object.getPrototypeOf(Previous)).call(this));
   }
 
-  _createClass(Perivous, [{
+  _createClass(Previous, [{
     key: "render",
     value: function render() {
       return React.createElement(
@@ -145,7 +145,7 @@ var Perivous = function (_React$Component3) {
         null,
         React.createElement(
           "div",
-          { id: "perivous" },
+          { id: "previous" },
           React.createElement(
             "center",
             null,
@@ -157,7 +157,7 @@ var Perivous = function (_React$Component3) {
     }
   }]);
 
-  return Perivous;
+  return Previous;
 }(React.Component);
 
 // This renders the JSX component inside the content node:

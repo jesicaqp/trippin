@@ -12,24 +12,24 @@ var contentNode2 = document.getElementById("event");
 
 let Calender  = React.createClass({
   getInitialState:function(){
-    return {next:false,perivous:true}
+    return {next:false,previous:true}
   },
     switch:function(word)
     {
-    let perivous,next;
-    if(word == "perivous"){perivous = true;next = false;}
-    else{next = true; perivous = false;}
-    return this.setState({next:next,perivous:perivous})
+    let previous,next;
+    if(word == "previous"){previous = true;next = false;}
+    else{next = true; previous = false;}
+    return this.setState({next:next,previous:previous})
     },
     
     render:function(){
             return (
               <div>
                     <div id="buttons">
-                      <button id="signupButton"onClick={this.switch.bind(null,"perivous")} className={this.state.perivous}>Perivous</button>
-                      <button id="loginButton"onClick={this.switch.bind(null,"next")} className={this.state.next}>Next</button>
+                      <button id="signupButton"onClick={this.switch.bind(null,"previous")} className={this.state.perivous}>Previous Month</button>
+                      <button id="loginButton"onClick={this.switch.bind(null,"next")} className={this.state.next}>Next Month</button>
                      </div>
-                      {this.state.perivous?<Perivous/>:null}
+                      {this.state.previous?<Previous/>:null}
                       {this.state.next?<Next />:null}
                 </div>
               )
@@ -68,14 +68,14 @@ class MyComponent extends React.Component {
           }
         }   
 
-class Perivous extends React.Component {    
+class Previous extends React.Component {    
  constructor() {
     super();
   }
             render(){
             return (
                 <div>
-                   <div id="perivous">
+                   <div id="previous">
                       <center> <img src="https://i.pinimg.com/originals/84/9b/bf/849bbfa252a24fb4734242a23a957ee8.jpg" width= "700" height="500"></img></center>
                 </div>
               </div>
