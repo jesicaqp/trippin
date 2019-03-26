@@ -125,6 +125,61 @@ var SignForm = function (_React$Component2) {
   return SignForm;
 }(React.Component);
 
+var Parent = function (_React$Component3) {
+  _inherits(Parent, _React$Component3);
+
+  function Parent() {
+    _classCallCheck(this, Parent);
+
+    return _possibleConstructorReturn(this, (Parent.__proto__ || Object.getPrototypeOf(Parent)).call(this));
+  }
+
+  _createClass(Parent, [{
+    key: "getInitialState",
+    value: function getInitialState() {
+      return { signup: false, login: true };
+    }
+  }, {
+    key: "switch",
+    value: function _switch(word) {
+      var signup = void 0,
+          login = void 0;
+      if (word == "signup") {
+        signup = true;login = false;
+      } else {
+        login = true;signup = false;
+      }
+      return this.setState({ login: login, signup: signup });
+    }
+  }, {
+    key: "render",
+    value: function render() {
+      return React.createElement(
+        "div",
+        null,
+        React.createElement(
+          "div",
+          { id: "buttons" },
+          React.createElement(
+            "p",
+            { id: "signupButton", onClick: this.switch.bind(null, "signup"), className: this.state.signup },
+            "Sign In"
+          ),
+          React.createElement(
+            "p",
+            { id: "loginButton", onClick: this.switch.bind(null, "login"), className: this.state.login },
+            "Login"
+          )
+        ),
+        this.state.signup ? React.createElement(Signup, null) : null,
+        this.state.login ? React.createElement(Login, null) : null
+      );
+    }
+  }]);
+
+  return Parent;
+}(React.Component);
+
 // This renders the JSX component inside the content node:
 
 

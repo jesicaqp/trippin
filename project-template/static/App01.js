@@ -8,8 +8,14 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-var Parent = React.createClass({
-  displayName: "Parent",
+// This is a place holder for the initial application state.
+var state = [];
+
+// This grabs the DOM element to be used to mount React components.
+var contentNode = document.getElementById("contents");
+
+var MyComponent = React.createClass({
+  displayName: "MyComponent",
 
   getInitialState: function getInitialState() {
     return { signup: false, login: true };
@@ -33,12 +39,12 @@ var Parent = React.createClass({
         "div",
         { id: "buttons" },
         React.createElement(
-          "p",
+          "button",
           { id: "signupButton", onClick: this.switch.bind(null, "signup"), className: this.state.signup },
-          "Sign In"
+          "Sign Up"
         ),
         React.createElement(
-          "p",
+          "button",
           { id: "loginButton", onClick: this.switch.bind(null, "login"), className: this.state.login },
           " Login"
         )
@@ -67,7 +73,7 @@ var Signup = function (_React$Component) {
         React.createElement(
           "div",
           { id: "signup" },
-          React.createElement("input", { type: "text", id: "name", placeholder: "username" }),
+          React.createElement("input", { type: "text", id: "name", placeholder: "Username" }),
           React.createElement("input", { type: "email", id: "email", placeholder: "Email" }),
           React.createElement("input", { type: "password", id: "password", placeholder: "Password" }),
           React.createElement("input", { type: "password", id: "confirm", placeholder: "Confirm Password" }),
@@ -125,4 +131,4 @@ var Login = function (_React$Component2) {
   return Login;
 }(React.Component);
 
-ReactDOM.render(React.createElement(Parent, null), document.getElementById("contents"));
+ReactDOM.render(React.createElement(MyComponent, null), contentNode);

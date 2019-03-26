@@ -51,6 +51,36 @@ class SignForm extends React.Component {
   }
 }
 
+class Parent extends React.Component {
+    constructor() {
+    super();
+  }
+   getInitialState()
+   {
+     return {signup:false,login:true}
+   }
+    switch(word)
+    {
+      let signup,login;
+      if(word == "signup"){signup = true;login = false;}
+      else{login = true; signup = false;}
+      return this.setState({login:login,signup:signup})
+    }
+
+    render(){
+      return (
+         <div>
+            <div id="buttons">
+            <p id="signupButton" onClick={this.switch.bind(null,"signup")} className={this.state.signup}>Sign In</p>
+            <p id="loginButton" onClick={this.switch.bind(null,"login")} className={this.state.login}>Login</p>
+            </div>
+            {this.state.signup?<Signup />:null}
+            {this.state.login?<Login />:null}
+          </div>
+      );
+    }
+  }
+
 // This renders the JSX component inside the content node:
 ReactDOM.render(<MyComponent />, contentNode);
 ReactDOM.render(<SignForm />, contentNode2);
