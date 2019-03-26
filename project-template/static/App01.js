@@ -112,7 +112,7 @@ var Login = function (_React$Component2) {
         React.createElement(
           "div",
           { id: "login" },
-          React.createElement("input", { type: "email", id: "email", placeholder: "Email" }),
+          React.createElement("input", { type: "email", id: "email", placeholder: "Username" }),
           React.createElement("input", { type: "password", id: "password", placeholder: "Password" }),
           React.createElement(
             "button",

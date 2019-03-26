@@ -59,7 +59,7 @@ class Login extends React.Component {
               return (
                     <div>
                       <div id="login">
-                      <input type="email" id="email" placeholder="Email"/>
+                      <input type="email" id="email" placeholder="Username"/>
                       <input type="password" id="password" placeholder="Password"/>
                       <button id="send"><a href="/view02.html">Login</a></button>
                       </div>
