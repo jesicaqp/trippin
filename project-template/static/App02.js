@@ -42,12 +42,12 @@ var Calender = React.createClass({
         React.createElement(
           "button",
           { id: "perivous", onClick: this.switch.bind(null, "perivous"), className: this.state.Jan },
-          "January"
+          "Previous Month"
         ),
         React.createElement(
           "button",
           { id: "next", onClick: this.switch.bind(null, "next"), className: this.state.Feb },
-          "Febuary"
+          "Next Month"
         )
       ),
       this.state.Jan ? React.createElement(Perivous, null) : null,
@@ -114,7 +114,12 @@ var Perivous = function (_React$Component2) {
         React.createElement(
           "div",
           { id: "perivous" },
-          React.createElement("img", { src: "https://i.pinimg.com/originals/84/9b/bf/849bbfa252a24fb4734242a23a957ee8.jpg" })
+          React.createElement(
+            "center",
+            null,
+            " ",
+            React.createElement("img", { src: "https://i.pinimg.com/originals/84/9b/bf/849bbfa252a24fb4734242a23a957ee8.jpg", width: "700", height: "500" })
+          )
         )
       );
     }
@@ -141,7 +146,12 @@ var Next = function (_React$Component3) {
         React.createElement(
           "div",
           { id: "next" },
-          React.createElement("img", { src: "https://i.pinimg.com/originals/e7/70/0c/e7700c74cda27fcce7b1f6ebf971e455.jpg" })
+          React.createElement(
+            "center",
+            null,
+            " ",
+            React.createElement("img", { src: "https://i.pinimg.com/originals/e7/70/0c/e7700c74cda27fcce7b1f6ebf971e455.jpg", width: "700", height: "500" })
+          )
         )
       );
     }

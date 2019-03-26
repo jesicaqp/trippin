@@ -188,7 +188,7 @@ var View = function (_React$Component2) {
           React.createElement(
             "text",
             null,
-            "Jesica Quinones, Aibhilin Fitzpatrick, Arushi Ahmed."
+            "Jesica Quinones, Aibhlin Fitzpatrick, Arushi Ahmed."
           ),
           React.createElement("br", null),
           React.createElement(

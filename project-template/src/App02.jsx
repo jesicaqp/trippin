@@ -26,8 +26,8 @@ let Calender = React.createClass({
             return (
               <div>
                     <div id="buttons">
-                      <button id="perivous"onClick={this.switch.bind(null,"perivous")} className={this.state.Jan}>January</button>
-                      <button id="next"onClick={this.switch.bind(null,"next")} className={this.state.Feb}>Febuary</button>
+                      <button id="perivous"onClick={this.switch.bind(null,"perivous")} className={this.state.Jan}>Previous Month</button>
+                      <button id="next"onClick={this.switch.bind(null,"next")} className={this.state.Feb}>Next Month</button>
                      </div>
                       {this.state.Jan?<Perivous />:null}
                       {this.state.Feb?<Next />:null}
@@ -61,7 +61,7 @@ class Perivous extends React.Component {
             return (
                 <div>
                    <div id="perivous">
-                      <img src="https://i.pinimg.com/originals/84/9b/bf/849bbfa252a24fb4734242a23a957ee8.jpg"></img>
+                     <center> <img src="https://i.pinimg.com/originals/84/9b/bf/849bbfa252a24fb4734242a23a957ee8.jpg" width= "700" height="500"></img></center>
                 </div>
               </div>
             );
@@ -76,7 +76,7 @@ class Perivous extends React.Component {
             return (
                 <div>
                    <div id="next">
-                      <img src="https://i.pinimg.com/originals/e7/70/0c/e7700c74cda27fcce7b1f6ebf971e455.jpg"></img>
+                     <center> <img src="https://i.pinimg.com/originals/e7/70/0c/e7700c74cda27fcce7b1f6ebf971e455.jpg" width="700" height="500"></img></center>
                 </div>
               </div>
             );

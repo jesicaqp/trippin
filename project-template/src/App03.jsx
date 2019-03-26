@@ -69,7 +69,7 @@ let MyComponent  = React.createClass({
                           <label for="edescritpion"><h3><b>Event Description</b></h3></label>
                           <text>A week of fun and relaxation for students before the second round of midterms. We will be celebrating the start of spring and the start of warmer temperatures and sunny skies. </text>
                           <label for="einvitelist"><h3><b>Event Attendee List</b></h3></label>
-                          <text>Jesica Quinones, Aibhilin Fitzpatrick, Arushi Ahmed.</text> 
+                          <text>Jesica Quinones, Aibhlin Fitzpatrick, Arushi Ahmed.</text> 
                           <br></br>
                           <button id="edit"><a href="/view03.html">Edit</a></button><br></br>
                           <button id="calendar"><a href="/view02.html">Calendar</a></button>
