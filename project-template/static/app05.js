@@ -20,17 +20,17 @@ var MyComponent = React.createClass({
   displayName: "MyComponent",
 
   getInitialState: function getInitialState() {
-    return { view: false, create: true };
+    return { create: false, view: true };
   },
   switch: function _switch(word) {
-    var view = void 0,
-        create = void 0;
-    if (word == "view") {
-      view = true;create = false;
-    } else {
+    var create = void 0,
+        view = void 0;
+    if (word == "create") {
       create = true;view = false;
+    } else {
+      view = true;create = false;
     }
-    return this.setState({ create: create, view: view });
+    return this.setState({ view: view, create: create });
   },
 
   render: function render() {

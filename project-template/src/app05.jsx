@@ -10,14 +10,14 @@ var contentNode = document.getElementById("contents");
 //signup = view, login = create
 let MyComponent  = React.createClass({
     getInitialState:function(){
-      return {view:false,create:true}
+      return {create:false,view:true}
     },
       switch:function(word)
       {
-      let view, create;
-      if(word == "view"){view = true;create = false;}
-      else{create = true; view = false;}
-      return this.setState({create:create,view:view})
+      let create, view;
+      if(word == "create"){create = true;view = false;}
+      else{view = true; create = false;}
+      return this.setState({view:view,create:create})
       },
       
       render:function(){
