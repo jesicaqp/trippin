@@ -46,11 +46,6 @@ var MyComponent = function (_React$Component) {
             null,
             "Calendar View"
           )
-        ),
-        React.createElement(
-          "center",
-          null,
-          React.createElement("img", { src: "https://www.thewallworks.com/images/products/basic-calendar.JPG" })
         )
       );
     }
