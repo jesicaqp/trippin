@@ -26,8 +26,13 @@ let Calender  = React.createClass({
             return (
               <div>
                     <div id="buttons">
+<<<<<<< HEAD
                       <button id="signupButton"onClick={this.switch.bind(null,"perivous")} className={this.state.perivous}>January</button>
                       <button id="loginButton"onClick={this.switch.bind(null,"next")} className={this.state.next}>Febuary</button>
+=======
+                      <button id="perivous"onClick={this.switch.bind(null,"perivous")} className={this.state.Jan}>Previous Month</button>
+                      <button id="next"onClick={this.switch.bind(null,"next")} className={this.state.Feb}>Next Month</button>
+>>>>>>> 3a3654f92d56ac6c11a4b83892ff32327c5f00a8
                      </div>
                       {this.state.perivous?<Perivous/>:null}
                       {this.state.next?<Next />:null}
@@ -60,9 +65,15 @@ class MyComponent extends React.Component {
             render(){
             return (
                 <div>
+<<<<<<< HEAD
                    <div id="next">
                       <img src="https://i.pinimg.com/originals/e7/70/0c/e7700c74cda27fcce7b1f6ebf971e455.jpg"></img>
                   </div>
+=======
+                   <div id="perivous">
+                     <center> <img src="https://i.pinimg.com/originals/84/9b/bf/849bbfa252a24fb4734242a23a957ee8.jpg" width= "700" height="500"></img></center>
+                </div>
+>>>>>>> 3a3654f92d56ac6c11a4b83892ff32327c5f00a8
               </div>
             );
           }
@@ -75,8 +86,13 @@ class Perivous extends React.Component {
             render(){
             return (
                 <div>
+<<<<<<< HEAD
                    <div id="perivous">
                       <img src="https://i.pinimg.com/originals/84/9b/bf/849bbfa252a24fb4734242a23a957ee8.jpg"></img>
+=======
+                   <div id="next">
+                     <center> <img src="https://i.pinimg.com/originals/e7/70/0c/e7700c74cda27fcce7b1f6ebf971e455.jpg" width="700" height="500"></img></center>
+>>>>>>> 3a3654f92d56ac6c11a4b83892ff32327c5f00a8
                 </div>
               </div>
             );

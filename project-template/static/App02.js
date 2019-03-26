@@ -41,6 +41,7 @@ var Calender = React.createClass({
         { id: "buttons" },
         React.createElement(
           "button",
+<<<<<<< HEAD
           { id: "signupButton", onClick: this.switch.bind(null, "perivous"), className: this.state.perivous },
           "January"
         ),
@@ -48,6 +49,15 @@ var Calender = React.createClass({
           "button",
           { id: "loginButton", onClick: this.switch.bind(null, "next"), className: this.state.next },
           "Febuary"
+=======
+          { id: "perivous", onClick: this.switch.bind(null, "perivous"), className: this.state.Jan },
+          "Previous Month"
+        ),
+        React.createElement(
+          "button",
+          { id: "next", onClick: this.switch.bind(null, "next"), className: this.state.Feb },
+          "Next Month"
+>>>>>>> 3a3654f92d56ac6c11a4b83892ff32327c5f00a8
         )
       ),
       this.state.perivous ? React.createElement(Perivous, null) : null,
@@ -113,8 +123,18 @@ var Next = function (_React$Component2) {
         null,
         React.createElement(
           "div",
+<<<<<<< HEAD
           { id: "next" },
           React.createElement("img", { src: "https://i.pinimg.com/originals/e7/70/0c/e7700c74cda27fcce7b1f6ebf971e455.jpg" })
+=======
+          { id: "perivous" },
+          React.createElement(
+            "center",
+            null,
+            " ",
+            React.createElement("img", { src: "https://i.pinimg.com/originals/84/9b/bf/849bbfa252a24fb4734242a23a957ee8.jpg", width: "700", height: "500" })
+          )
+>>>>>>> 3a3654f92d56ac6c11a4b83892ff32327c5f00a8
         )
       );
     }
@@ -140,8 +160,18 @@ var Perivous = function (_React$Component3) {
         null,
         React.createElement(
           "div",
+<<<<<<< HEAD
           { id: "perivous" },
           React.createElement("img", { src: "https://i.pinimg.com/originals/84/9b/bf/849bbfa252a24fb4734242a23a957ee8.jpg" })
+=======
+          { id: "next" },
+          React.createElement(
+            "center",
+            null,
+            " ",
+            React.createElement("img", { src: "https://i.pinimg.com/originals/e7/70/0c/e7700c74cda27fcce7b1f6ebf971e455.jpg", width: "700", height: "500" })
+          )
+>>>>>>> 3a3654f92d56ac6c11a4b83892ff32327c5f00a8
         )
       );
     }
