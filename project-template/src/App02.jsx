@@ -10,27 +10,27 @@ var contentNode = document.getElementById("contents");
 var contentNode2 = document.getElementById("event");
 
 
-let Calender = React.createClass({
+let Calender  = React.createClass({
   getInitialState:function(){
-    return {Feb:false,Jan:true}
+    return {next:false,perivous:true}
   },
     switch:function(word)
     {
-    let Jan,Feb;
-    if(word == "Jan"){Jan = true; Feb = false;}
-    else{Feb = true; Jan = false;}
-    return this.setState({Feb:Feb,Jan:Jan})
+    let perivous,next;
+    if(word == "perivous"){perivous = true;next = false;}
+    else{next = true; perivous = false;}
+    return this.setState({next:next,perivous:perivous})
     },
     
     render:function(){
             return (
               <div>
                     <div id="buttons">
-                      <button id="perivous"onClick={this.switch.bind(null,"perivous")} className={this.state.Jan}>January</button>
-                      <button id="next"onClick={this.switch.bind(null,"next")} className={this.state.Feb}>Febuary</button>
+                      <button id="signupButton"onClick={this.switch.bind(null,"perivous")} className={this.state.perivous}>January</button>
+                      <button id="loginButton"onClick={this.switch.bind(null,"next")} className={this.state.next}>Febuary</button>
                      </div>
-                      {this.state.Jan?<Perivous />:null}
-                      {this.state.Feb?<Next />:null}
+                      {this.state.perivous?<Perivous/>:null}
+                      {this.state.next?<Next />:null}
                 </div>
               )
             }
@@ -53,6 +53,21 @@ class MyComponent extends React.Component {
   }
 }
 
+ class Next extends React.Component {    
+  constructor() {
+    super();
+  }
+            render(){
+            return (
+                <div>
+                   <div id="next">
+                      <img src="https://i.pinimg.com/originals/e7/70/0c/e7700c74cda27fcce7b1f6ebf971e455.jpg"></img>
+                  </div>
+              </div>
+            );
+          }
+        }   
+
 class Perivous extends React.Component {    
  constructor() {
     super();
@@ -66,22 +81,7 @@ class Perivous extends React.Component {
               </div>
             );
           }
-        } 
-
- class Next extends React.Component {    
-  constructor() {
-    super();
-  }
-            render(){
-            return (
-                <div>
-                   <div id="next">
-                      <img src="https://i.pinimg.com/originals/e7/70/0c/e7700c74cda27fcce7b1f6ebf971e455.jpg"></img>
-                </div>
-              </div>
-            );
-          }
-        }       
+        }     
 
 
 // This renders the JSX component inside the content node:

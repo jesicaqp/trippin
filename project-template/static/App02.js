@@ -19,17 +19,17 @@ var Calender = React.createClass({
   displayName: "Calender",
 
   getInitialState: function getInitialState() {
-    return { Feb: false, Jan: true };
+    return { next: false, perivous: true };
   },
   switch: function _switch(word) {
-    var Jan = void 0,
-        Feb = void 0;
-    if (word == "Jan") {
-      Jan = true;Feb = false;
+    var perivous = void 0,
+        next = void 0;
+    if (word == "perivous") {
+      perivous = true;next = false;
     } else {
-      Feb = true;Jan = false;
+      next = true;perivous = false;
     }
-    return this.setState({ Feb: Feb, Jan: Jan });
+    return this.setState({ next: next, perivous: perivous });
   },
 
   render: function render() {
@@ -41,17 +41,17 @@ var Calender = React.createClass({
         { id: "buttons" },
         React.createElement(
           "button",
-          { id: "perivous", onClick: this.switch.bind(null, "perivous"), className: this.state.Jan },
+          { id: "signupButton", onClick: this.switch.bind(null, "perivous"), className: this.state.perivous },
           "January"
         ),
         React.createElement(
           "button",
-          { id: "next", onClick: this.switch.bind(null, "next"), className: this.state.Feb },
+          { id: "loginButton", onClick: this.switch.bind(null, "next"), className: this.state.next },
           "Febuary"
         )
       ),
-      this.state.Jan ? React.createElement(Perivous, null) : null,
-      this.state.Feb ? React.createElement(Next, null) : null
+      this.state.perivous ? React.createElement(Perivous, null) : null,
+      this.state.next ? React.createElement(Next, null) : null
     );
   }
 });
@@ -96,35 +96,8 @@ var MyComponent = function (_React$Component) {
   return MyComponent;
 }(React.Component);
 
-var Perivous = function (_React$Component2) {
-  _inherits(Perivous, _React$Component2);
-
-  function Perivous() {
-    _classCallCheck(this, Perivous);
-
-    return _possibleConstructorReturn(this, (Perivous.__proto__ || Object.getPrototypeOf(Perivous)).call(this));
-  }
-
-  _createClass(Perivous, [{
-    key: "render",
-    value: function render() {
-      return React.createElement(
-        "div",
-        null,
-        React.createElement(
-          "div",
-          { id: "perivous" },
-          React.createElement("img", { src: "https://i.pinimg.com/originals/84/9b/bf/849bbfa252a24fb4734242a23a957ee8.jpg" })
-        )
-      );
-    }
-  }]);
-
-  return Perivous;
-}(React.Component);
-
-var Next = function (_React$Component3) {
-  _inherits(Next, _React$Component3);
+var Next = function (_React$Component2) {
+  _inherits(Next, _React$Component2);
 
   function Next() {
     _classCallCheck(this, Next);
@@ -148,6 +121,33 @@ var Next = function (_React$Component3) {
   }]);
 
   return Next;
+}(React.Component);
+
+var Perivous = function (_React$Component3) {
+  _inherits(Perivous, _React$Component3);
+
+  function Perivous() {
+    _classCallCheck(this, Perivous);
+
+    return _possibleConstructorReturn(this, (Perivous.__proto__ || Object.getPrototypeOf(Perivous)).call(this));
+  }
+
+  _createClass(Perivous, [{
+    key: "render",
+    value: function render() {
+      return React.createElement(
+        "div",
+        null,
+        React.createElement(
+          "div",
+          { id: "perivous" },
+          React.createElement("img", { src: "https://i.pinimg.com/originals/84/9b/bf/849bbfa252a24fb4734242a23a957ee8.jpg" })
+        )
+      );
+    }
+  }]);
+
+  return Perivous;
 }(React.Component);
 
 // This renders the JSX component inside the content node:
