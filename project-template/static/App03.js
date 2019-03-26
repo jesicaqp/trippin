@@ -83,6 +83,8 @@ var Create = function (_React$Component) {
           React.createElement("br", null),
           React.createElement("input", { type: "description", id: "desc", placeholder: "Event Description" }),
           React.createElement("br", null),
+          React.createElement("input", { type: "attendeelist", id: "desc", placeholder: "Event Attendee List" }),
+          React.createElement("br", null),
           React.createElement(
             "button",
             { id: "save" },

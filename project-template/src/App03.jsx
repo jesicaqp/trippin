@@ -46,6 +46,7 @@ let MyComponent  = React.createClass({
                       <input type="location" id="location" placeholder="Event Location"/><br></br>
                       <input type="date" id="date" placeholder="Event Date"/><br></br>
                       <input type="description" id="desc" placeholder="Event Description"/><br></br>
+                      <input type="attendeelist" id="desc" placeholder="Event Attendee List"/><br></br>
                       <button id="save"><a href="/view02.html">SAVE</a></button>
                   </div>
                 </div>
