@@ -13,6 +13,48 @@ var state = [];
 
 // This grabs the DOM element to be used to mount React components.
 var contentNode = document.getElementById("contents");
+var contentNode2 = document.getElementById("event");
+
+var Calender = React.createClass({
+  displayName: "Calender",
+
+  getInitialState: function getInitialState() {
+    return { Feb: false, Jan: true };
+  },
+  switch: function _switch(word) {
+    var Jan = void 0,
+        Feb = void 0;
+    if (word == "Jan") {
+      Jan = true;Feb = false;
+    } else {
+      Feb = true;Jan = false;
+    }
+    return this.setState({ Feb: Feb, Jan: Jan });
+  },
+
+  render: function render() {
+    return React.createElement(
+      "div",
+      null,
+      React.createElement(
+        "div",
+        { id: "buttons" },
+        React.createElement(
+          "button",
+          { id: "perivous", onClick: this.switch.bind(null, "perivous"), className: this.state.Jan },
+          "January"
+        ),
+        React.createElement(
+          "button",
+          { id: "next", onClick: this.switch.bind(null, "next"), className: this.state.Feb },
+          "Febuary"
+        )
+      ),
+      this.state.Jan ? React.createElement(Perivous, null) : null,
+      this.state.Feb ? React.createElement(Next, null) : null
+    );
+  }
+});
 
 var MyComponent = function (_React$Component) {
   _inherits(MyComponent, _React$Component);
@@ -35,7 +77,7 @@ var MyComponent = function (_React$Component) {
           React.createElement(
             "a",
             { href: "/view03.html" },
-            "Create Event +"
+            "Create Event+"
           )
         ),
         React.createElement(
@@ -54,7 +96,62 @@ var MyComponent = function (_React$Component) {
   return MyComponent;
 }(React.Component);
 
+var Perivous = function (_React$Component2) {
+  _inherits(Perivous, _React$Component2);
+
+  function Perivous() {
+    _classCallCheck(this, Perivous);
+
+    return _possibleConstructorReturn(this, (Perivous.__proto__ || Object.getPrototypeOf(Perivous)).call(this));
+  }
+
+  _createClass(Perivous, [{
+    key: "render",
+    value: function render() {
+      return React.createElement(
+        "div",
+        null,
+        React.createElement(
+          "div",
+          { id: "perivous" },
+          React.createElement("img", { src: "https://i.pinimg.com/originals/84/9b/bf/849bbfa252a24fb4734242a23a957ee8.jpg" })
+        )
+      );
+    }
+  }]);
+
+  return Perivous;
+}(React.Component);
+
+var Next = function (_React$Component3) {
+  _inherits(Next, _React$Component3);
+
+  function Next() {
+    _classCallCheck(this, Next);
+
+    return _possibleConstructorReturn(this, (Next.__proto__ || Object.getPrototypeOf(Next)).call(this));
+  }
+
+  _createClass(Next, [{
+    key: "render",
+    value: function render() {
+      return React.createElement(
+        "div",
+        null,
+        React.createElement(
+          "div",
+          { id: "next" },
+          React.createElement("img", { src: "https://i.pinimg.com/originals/e7/70/0c/e7700c74cda27fcce7b1f6ebf971e455.jpg" })
+        )
+      );
+    }
+  }]);
+
+  return Next;
+}(React.Component);
+
 // This renders the JSX component inside the content node:
 
 
-ReactDOM.render(React.createElement(MyComponent, null), contentNode);
+ReactDOM.render(React.createElement(Calender, null), contentNode);
+ReactDOM.render(React.createElement(MyComponent, null), contentNode2);
