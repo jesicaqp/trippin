@@ -1,4 +1,4 @@
-'use strict';
+"use strict";
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
@@ -13,151 +13,209 @@ var state = [];
 
 // This grabs the DOM element to be used to mount React components.
 var contentNode = document.getElementById("contents");
-var contentNode2 = document.getElementById('eventinfo');
-var contentNode3 = document.getElementById('eventbuttons');
+//var contentNode2 = document.getElementById('eventinfo');
+//var contentNode3 = document.getElementById('eventbuttons');
+//signup = view, login = create
+var MyComponent = React.createClass({
+  displayName: "MyComponent",
 
-var MyComponent = function (_React$Component) {
-  _inherits(MyComponent, _React$Component);
+  getInitialState: function getInitialState() {
+    return { view: false, create: true };
+  },
+  switch: function _switch(word) {
+    var view = void 0,
+        create = void 0;
+    if (word == "view") {
+      view = true;create = false;
+    } else {
+      create = true;view = false;
+    }
+    return this.setState({ create: create, view: view });
+  },
 
-  function MyComponent() {
-    _classCallCheck(this, MyComponent);
-
-    return _possibleConstructorReturn(this, (MyComponent.__proto__ || Object.getPrototypeOf(MyComponent)).call(this));
-  }
-
-  _createClass(MyComponent, [{
-    key: 'render',
-    value: function render() {
-      return React.createElement(
-        'div',
-        null,
+  render: function render() {
+    return React.createElement(
+      "div",
+      null,
+      React.createElement(
+        "div",
+        { id: "buttons" },
         React.createElement(
-          'h1',
-          null,
-          'Create Event'
+          "button",
+          { id: "viewButton", onClick: this.switch.bind(null, "view"), className: this.state.view },
+          "View Event"
+        ),
+        React.createElement(
+          "button",
+          { id: "createButton", onClick: this.switch.bind(null, "create"), className: this.state.create },
+          "Create Event"
         )
-      );
-    }
-  }]);
+      ),
+      this.state.view ? React.createElement(View, null) : null,
+      this.state.create ? React.createElement(Create, null) : null
+    );
+  }
+});
 
-  return MyComponent;
-}(React.Component);
+var Create = function (_React$Component) {
+  _inherits(Create, _React$Component);
 
-var EventInfo = function (_React$Component2) {
-  _inherits(EventInfo, _React$Component2);
+  function Create() {
+    _classCallCheck(this, Create);
 
-  function EventInfo() {
-    _classCallCheck(this, EventInfo);
-
-    return _possibleConstructorReturn(this, (EventInfo.__proto__ || Object.getPrototypeOf(EventInfo)).call(this));
+    return _possibleConstructorReturn(this, (Create.__proto__ || Object.getPrototypeOf(Create)).call(this));
   }
 
-  _createClass(EventInfo, [{
-    key: 'render',
+  _createClass(Create, [{
+    key: "render",
     value: function render() {
       return React.createElement(
-        'form',
+        "div",
         null,
         React.createElement(
-          'label',
-          { 'for': 'ename' },
+          "div",
+          { id: "create" },
+          React.createElement("input", { type: "text", id: "name", placeholder: "Event Name" }),
+          React.createElement("br", null),
+          React.createElement("input", { type: "location", id: "location", placeholder: "Event Location" }),
+          React.createElement("br", null),
+          React.createElement("input", { type: "date", id: "date", placeholder: "Event Date" }),
+          React.createElement("br", null),
+          React.createElement("input", { type: "description", id: "desc", placeholder: "Event Description" }),
+          React.createElement("br", null),
           React.createElement(
-            'b',
-            null,
-            'Event Name'
-          )
-        ),
-        React.createElement('input', { type: 'text', placeholder: 'Enter Event Name', name: 'ename' }),
-        React.createElement(
-          'label',
-          { 'for': 'edate' },
-          React.createElement(
-            'b',
-            null,
-            'Event Date'
-          )
-        ),
-        React.createElement('input', { type: 'date', placeholder: 'Enter Event Date', name: 'edate' }),
-        React.createElement(
-          'label',
-          { 'for': 'elocation' },
-          React.createElement(
-            'b',
-            null,
-            'Event Location'
-          )
-        ),
-        React.createElement('input', { type: 'text', placeholder: 'Enter Event Location', name: 'elocation' }),
-        React.createElement(
-          'label',
-          { 'for': 'edescription' },
-          React.createElement(
-            'b',
-            null,
-            'Event Description'
-          )
-        ),
-        React.createElement('input', { type: 'text', placeholder: 'Enter Event Description', name: 'edescription' }),
-        React.createElement(
-          'label',
-          { 'for': 'einvitelist' },
-          React.createElement(
-            'b',
-            null,
-            'Event Attendee List'
-          )
-        ),
-        React.createElement('input', { type: 'text', placeholder: 'Enter Event Attendee List', name: 'einvitelist' })
-      );
-    }
-  }]);
-
-  return EventInfo;
-}(React.Component);
-
-var EventButtons = function (_React$Component3) {
-  _inherits(EventButtons, _React$Component3);
-
-  function EventButtons() {
-    _classCallCheck(this, EventButtons);
-
-    return _possibleConstructorReturn(this, (EventButtons.__proto__ || Object.getPrototypeOf(EventButtons)).call(this));
-  }
-
-  _createClass(EventButtons, [{
-    key: 'render',
-    value: function render() {
-      return React.createElement(
-        'div',
-        null,
-        React.createElement(
-          'button',
-          null,
-          React.createElement(
-            'a',
-            { href: '/view05.html' },
-            'Save'
-          )
-        ),
-        React.createElement(
-          'button',
-          null,
-          React.createElement(
-            'a',
-            { href: '/view02.html' },
-            'Cancel'
+            "button",
+            { id: "save" },
+            React.createElement(
+              "a",
+              { href: "/view02.html" },
+              "SAVE"
+            )
           )
         )
       );
     }
   }]);
 
-  return EventButtons;
+  return Create;
 }(React.Component);
 
-// This renders the JSX component inside the content node:
+var View = function (_React$Component2) {
+  _inherits(View, _React$Component2);
 
+  function View() {
+    _classCallCheck(this, View);
+
+    return _possibleConstructorReturn(this, (View.__proto__ || Object.getPrototypeOf(View)).call(this));
+  }
+
+  _createClass(View, [{
+    key: "render",
+    value: function render() {
+      return React.createElement(
+        "div",
+        null,
+        React.createElement(
+          "div",
+          { id: "view" },
+          React.createElement(
+            "label",
+            { "for": "edate" },
+            React.createElement(
+              "h3",
+              null,
+              React.createElement(
+                "b",
+                null,
+                "Event Date"
+              )
+            )
+          ),
+          React.createElement(
+            "text",
+            null,
+            "03/25/2019 to 04/02/2019"
+          ),
+          React.createElement(
+            "label",
+            { "for": "elocation" },
+            React.createElement(
+              "h3",
+              null,
+              React.createElement(
+                "b",
+                null,
+                "Event Location"
+              )
+            )
+          ),
+          React.createElement(
+            "text",
+            null,
+            "This event will take place in Cape Cod, Massachusetts."
+          ),
+          React.createElement(
+            "label",
+            { "for": "edescritpion" },
+            React.createElement(
+              "h3",
+              null,
+              React.createElement(
+                "b",
+                null,
+                "Event Description"
+              )
+            )
+          ),
+          React.createElement(
+            "text",
+            null,
+            "A week of fun and relaxation for students before the second round of midterms. We will be celebrating the start of spring and the start of warmer temperatures and sunny skies. "
+          ),
+          React.createElement(
+            "label",
+            { "for": "einvitelist" },
+            React.createElement(
+              "h3",
+              null,
+              React.createElement(
+                "b",
+                null,
+                "Event Attendee List"
+              )
+            )
+          ),
+          React.createElement(
+            "text",
+            null,
+            "Jesica Quinones, Aibhilin Fitzpatrick, Arushi Ahmed."
+          ),
+          React.createElement("br", null),
+          React.createElement(
+            "button",
+            { id: "edit" },
+            React.createElement(
+              "a",
+              { href: "/view03.html" },
+              "Edit"
+            )
+          ),
+          React.createElement("br", null),
+          React.createElement(
+            "button",
+            { id: "calendar" },
+            React.createElement(
+              "a",
+              { href: "/view02.html" },
+              "Calendar"
+            )
+          )
+        )
+      );
+    }
+  }]);
+
+  return View;
+}(React.Component);
 
 ReactDOM.render(React.createElement(MyComponent, null), contentNode);
-ReactDOM.render(React.createElement(EventInfo, null), contentNode2);
-ReactDOM.render(React.createElement(EventButtons, null), contentNode3);
