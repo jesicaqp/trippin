@@ -23,7 +23,7 @@ let MyComponent  = React.createClass({
               <div>
                     <div id="buttons">
                       <button id="signupButton"onClick={this.switch.bind(null,"signup")} className={this.state.signup}>Sign Up</button>
-                      <button id="loginButton"onClick={this.switch.bind(null,"login")} className={this.state.login}> Login</button>
+                      <button id="loginButton"onClick={this.switch.bind(null,"login")} className={this.state.login}>Login</button>
                      </div>
                       {this.state.signup?<Signup/>:null}
                       {this.state.login?<Login />:null}

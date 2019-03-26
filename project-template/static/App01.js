@@ -46,7 +46,7 @@ var MyComponent = React.createClass({
         React.createElement(
           "button",
           { id: "loginButton", onClick: this.switch.bind(null, "login"), className: this.state.login },
-          " Login"
+          "Login"
         )
       ),
       this.state.signup ? React.createElement(Signup, null) : null,
