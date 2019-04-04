@@ -23,3 +23,20 @@ db.username.insert([
 },
 
 ]);
+
+db = new Mongo().getDB('eventsTracker');
+
+db.events.remove({});
+
+
+db.events.insert([
+{
+	"name" : "Trip to the cape", 
+	"location" : "This event will take place in Cape Cod, Massachusetts.", 
+	"date" : 03/25/2019, 
+	"description" : "A week of fun and relaxation for students before the second round of midterms. We will be celebrating the start of spring and the start of warmer temperatures and sunny skies.", 
+	"attendees" : "Jesica Quinones, Aibhlin Fitzpatrick, Arushi Ahmed.",
+},
+
+
+]);
