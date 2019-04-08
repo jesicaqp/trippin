@@ -16,6 +16,7 @@ var contentNode = document.getElementById("contents");
 //var contentNode2 = document.getElementById('eventinfo');
 //var contentNode3 = document.getElementById('eventbuttons');
 //signup = view, login = create
+
 var MyComponent = React.createClass({
   displayName: "MyComponent",
 
@@ -63,18 +64,49 @@ var Create = function (_React$Component) {
   function Create() {
     _classCallCheck(this, Create);
 
-    return _possibleConstructorReturn(this, (Create.__proto__ || Object.getPrototypeOf(Create)).call(this));
+    var _this = _possibleConstructorReturn(this, (Create.__proto__ || Object.getPrototypeOf(Create)).call(this));
+
+    _this.handleEvent = _this.handleEvent.bind(_this);
+    return _this;
   }
 
   _createClass(Create, [{
+    key: "handleEvent",
+    value: function handleEvent(e) {
+      e.preventDefault();
+      var form = document.forms.event;
+      var submitReq = {
+        "name": form.name.value,
+        "location": form.location.value,
+        "date": form.date.value,
+        "description": form.desc.value,
+        "attendees": form.desc.value
+
+      };
+      fetch('/api/events', {
+        method: 'post',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(submitReq)
+      }).then(function (res) {
+        return res.json();
+      }).then(function (json) {
+        console.log(json.success);
+        if (json.success) {
+          alert(json.msg);
+        } else {
+          alert('Failed to add event.\n Error description: ' + json.msg);
+        }
+      });
+    }
+  }, {
     key: "render",
     value: function render() {
       return React.createElement(
         "div",
         null,
         React.createElement(
-          "div",
-          { id: "create" },
+          "form",
+          { id: "create", name: "event", onSubmit: this.handleEvent },
           React.createElement("input", { type: "text", id: "name", placeholder: "Event Name" }),
           React.createElement("br", null),
           React.createElement("input", { type: "location", id: "location", placeholder: "Event Location" }),
@@ -87,12 +119,8 @@ var Create = function (_React$Component) {
           React.createElement("br", null),
           React.createElement(
             "button",
-            { id: "save" },
-            React.createElement(
-              "a",
-              { href: "/view05.html" },
-              "SAVE"
-            )
+            { id: "save", type: "submit" },
+            "SAVE"
           )
         )
       );
@@ -108,10 +136,35 @@ var View = function (_React$Component2) {
   function View() {
     _classCallCheck(this, View);
 
-    return _possibleConstructorReturn(this, (View.__proto__ || Object.getPrototypeOf(View)).call(this));
+    var _this2 = _possibleConstructorReturn(this, (View.__proto__ || Object.getPrototypeOf(View)).call(this));
+
+    _this2.state = {
+      events: []
+    };
+    return _this2;
   }
 
   _createClass(View, [{
+    key: "eventData",
+    value: function eventData() {
+      var _this3 = this;
+
+      var eventID = this.state.eventID;
+      fetch("api/events/" + eventID.toString()).then(function (res) {
+        if (res.ok) {
+          res.json().then(function (json) {
+            var events = [];
+            json.events.forEach(function (video) {
+              events.push(events);
+            });
+            _this3.setState({ events: events });
+          });
+        }
+      }).catch(function (err) {
+        alert("There was a problem: " + err.message);
+      });
+    }
+  }, {
     key: "render",
     value: function render() {
       return React.createElement(
@@ -120,87 +173,11 @@ var View = function (_React$Component2) {
         React.createElement(
           "div",
           { id: "view" },
-          React.createElement(
-            "label",
-            { "for": "edate" },
-            React.createElement(
-              "h3",
-              null,
-              React.createElement(
-                "b",
-                null,
-                "Event Date"
-              )
-            )
-          ),
-          React.createElement(
-            "text",
-            null,
-            "03/25/2019 to 04/02/2019"
-          ),
-          React.createElement(
-            "label",
-            { "for": "elocation" },
-            React.createElement(
-              "h3",
-              null,
-              React.createElement(
-                "b",
-                null,
-                "Event Location"
-              )
-            )
-          ),
-          React.createElement(
-            "text",
-            null,
-            "This event will take place in Cape Cod, Massachusetts."
-          ),
-          React.createElement(
-            "label",
-            { "for": "edescritpion" },
-            React.createElement(
-              "h3",
-              null,
-              React.createElement(
-                "b",
-                null,
-                "Event Description"
-              )
-            )
-          ),
-          React.createElement(
-            "text",
-            null,
-            "A week of fun and relaxation for students before the second round of midterms. We will be celebrating the start of spring and the start of warmer temperatures and sunny skies. "
-          ),
-          React.createElement(
-            "label",
-            { "for": "einvitelist" },
-            React.createElement(
-              "h3",
-              null,
-              React.createElement(
-                "b",
-                null,
-                "Event Attendee List"
-              )
-            )
-          ),
-          React.createElement(
-            "text",
-            null,
-            "Jesica Quinones, Aibhlin Fitzpatrick, Arushi Ahmed."
-          ),
-          React.createElement("br", null),
+          this.state.events,
           React.createElement(
             "button",
             { id: "edit" },
-            React.createElement(
-              "a",
-              { href: "/view03.html" },
-              "Edit"
-            )
+            "Edit"
           ),
           React.createElement("br", null),
           React.createElement(

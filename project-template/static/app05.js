@@ -88,11 +88,7 @@ var Create = function (_React$Component) {
           React.createElement(
             "button",
             { id: "save" },
-            React.createElement(
-              "a",
-              { href: "/view05.html" },
-              "SAVE"
-            )
+            "SAVE"
           )
         )
       );

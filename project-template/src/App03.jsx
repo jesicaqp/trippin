@@ -8,6 +8,7 @@ var contentNode = document.getElementById("contents");
 //var contentNode2 = document.getElementById('eventinfo');
 //var contentNode3 = document.getElementById('eventbuttons');
 //signup = view, login = create
+
 let MyComponent  = React.createClass({
     getInitialState:function(){
       return {view:false,create:true}
@@ -37,18 +38,48 @@ let MyComponent  = React.createClass({
   class Create extends React.Component {    
     constructor() {
       super();
+      this.handleEvent = this.handleEvent.bind(this);
     }
+
+    handleEvent(e){
+    e.preventDefault();
+    let form = document.forms.event;
+    const submitReq = {
+        "name": form.name.value,
+        "location": form.location.value,
+        "date": form.date.value,
+        "description" : form.desc.value,
+        "attendees": form.desc.value
+      
+    }
+     fetch('/api/events', {
+      method: 'post',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(submitReq),
+    })
+
+    .then(res => res.json())
+    .then(json => {
+      console.log(json.success);
+      if (json.success) {
+        alert(json.msg);
+      }
+      else {
+        alert('Failed to add event.\n Error description: ' + json.msg);
+      }
+    });
+  }
               render(){
               return (
                   <div>
-                     <div id="create">
+                     <form id="create" name="event" onSubmit={this.handleEvent}>
                       <input type="text" id="name" placeholder="Event Name"/><br></br>
                       <input type="location" id="location" placeholder="Event Location"/><br></br>
                       <input type="date" id="date" placeholder="Event Date"/><br></br>
                       <input type="description" id="desc" placeholder="Event Description"/><br></br>
                       <input type="attendeelist" id="desc" placeholder="Event Attendee List"/><br></br>
-                      <button id="save"><a href="/view05.html">SAVE</a></button>
-                  </div>
+                      <button id="save" type="submit">SAVE</button>
+                  </form>
                 </div>
               );
             }
@@ -57,22 +88,36 @@ let MyComponent  = React.createClass({
   class View extends React.Component {
          constructor() {
          super();
+         this.state = {
+          events: []
+         };
     }
+
+    eventData(){
+    let eventID = this.state.eventID;
+    fetch("api/events/" + eventID.toString())
+      .then( res => {
+        if (res.ok) {
+          res.json().then( json => {
+            let events = [];
+            json.events.forEach(video => {
+              events.push(
+                events
+              )
+            });
+            this.setState({events: events})
+          })
+        }
+      }).catch(err => {
+        alert("There was a problem: " + err.message)
+      });
+  }
                 render(){
                 return (
                       <div>
                         <div id="view">
-                         
-                          <label for="edate"><h3><b>Event Date</b></h3></label>
-                          <text>03/25/2019 to 04/02/2019</text>
-                          <label for="elocation"><h3><b>Event Location</b></h3></label>
-                          <text>This event will take place in Cape Cod, Massachusetts.</text>
-                          <label for="edescritpion"><h3><b>Event Description</b></h3></label>
-                          <text>A week of fun and relaxation for students before the second round of midterms. We will be celebrating the start of spring and the start of warmer temperatures and sunny skies. </text>
-                          <label for="einvitelist"><h3><b>Event Attendee List</b></h3></label>
-                          <text>Jesica Quinones, Aibhlin Fitzpatrick, Arushi Ahmed.</text> 
-                          <br></br>
-                          <button id="edit"><a href="/view03.html">Edit</a></button><br></br>
+                          {this.state.events}
+                          <button id="edit">Edit</button><br></br>
                           <button id="calendar"><a href="/view02.html">Calendar</a></button>
                         </div>
                       </div>

@@ -18,14 +18,15 @@ const eventFieldType = {
 
 function validateEvent(event) {
   for (const field in eventFieldType) {
-    const type = eventFieldType[field];
-    if (!type) {
-      delete event[field];
-    } else if (type === 'required' && !event[field]) {
-      return `${field} is required.`;
+    if(eventFieldType.hasOwnProperty(field)){
+         const type = eventFieldType[field];
+          if (!type) {
+            delete event[field];
+          } else if (type === 'required' && !event[field]) {
+            return `${field} is required.`;
+          }
     }
-  }
-  
+   }
   return null;
 }
 
@@ -40,6 +41,7 @@ app.get('/api/events', (req, res) => {
 });
 
 app.post('/api/events', (req, res) => {
+  console.log(req)
   const newEvent = req.body;
 
   newEvent.date = new Date();
