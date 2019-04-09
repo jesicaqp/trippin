@@ -87,28 +87,31 @@ let MyComponent  = React.createClass({
           }
   
   class View extends React.Component {
-         constructor() {
-         super();
-         this.viewNewevent = this.viewNewevent.bind(this);
-
-         this.state = {
-          events: [],
-         };
+    constructor() {
+	     super();
+	     //this.viewNewevent = this.viewNewevent.bind(this);
+	     this.loadData = this.loadData.bind(this);
+	     
+	     this.state = {
+	      events: [],
+	     };
+    
     }
 
+
     componentDidMount() {
-    this.loadData();
-  }
+    	this.loadData();
+  	}
 
  
 loadData(){
-    let event = this.state.event;
-    fetch("api/events/" + event.toString())
+    let event = this.state.events;
+    fetch("api/events")
       .then(res => {
         if (res.ok) {
           res.json().then( json => {
-            let events = [];
-            json.events.forEach(video => {
+          	let events = [];
+            json.records.forEach(event => {
               events.push(
                 event
               )
@@ -119,14 +122,15 @@ loadData(){
       }).catch( err => {
         alert("There was a problem: " + err.message)
       });
+
   }
 
     render(){
-      let eventForm = <Create event={this.state.event} />
+    //	console.log(this.state.events)
         return (
         <div>
               <div id="view">
-              {eventForm}
+              <button id="calendar" onClick={this.loadData}>All Events</button><br></br>
               <button id="edit">Edit</button><br></br>
               <button id="calendar"><a href="/view02.html">Calendar</a></button>
               </div>
@@ -134,6 +138,7 @@ loadData(){
         );
       }
     }
+
 
  
   ReactDOM.render(<MyComponent />, contentNode);
