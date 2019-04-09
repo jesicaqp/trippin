@@ -16,6 +16,93 @@ var contentNode = document.getElementById("contents");
 //var contentNode2 = document.getElementById('eventinfo');
 //var contentNode3 = document.getElementById('eventbuttons');
 //signup = view, login = create
+var EventRow = function EventRow(props) {
+  return React.createElement(
+    "tr",
+    null,
+    React.createElement(
+      "td",
+      null,
+      props.event.name
+    ),
+    React.createElement(
+      "td",
+      null,
+      props.event.description
+    ),
+    React.createElement(
+      "td",
+      null,
+      props.event.date
+    ),
+    React.createElement(
+      "td",
+      null,
+      props.event.location
+    ),
+    React.createElement(
+      "td",
+      null,
+      props.event.attendees
+    )
+  );
+};
+
+function EventTable(props) {
+  console.log(props.events);
+  // NEW: we replace issue.id with issue._id to work with mongo objects.
+  var eventRows = props.events.map(function (event) {
+    return React.createElement(EventRow, { key: event._id, event: event });
+  });
+  console.log(eventRows);
+  return React.createElement(
+    "table",
+    { className: "bordered-table" },
+    React.createElement(
+      "thead",
+      null,
+      React.createElement(
+        "tr",
+        null,
+        React.createElement(
+          "th",
+          null,
+          "Id"
+        ),
+        React.createElement(
+          "th",
+          null,
+          "Title"
+        ),
+        React.createElement(
+          "th",
+          null,
+          "Description"
+        ),
+        React.createElement(
+          "th",
+          null,
+          "Date"
+        ),
+        React.createElement(
+          "th",
+          null,
+          "Location"
+        ),
+        React.createElement(
+          "th",
+          null,
+          "Attendees"
+        )
+      )
+    ),
+    React.createElement(
+      "tbody",
+      null,
+      eventRows
+    )
+  );
+}
 
 var MyComponent = React.createClass({
   displayName: "MyComponent",
@@ -137,13 +224,15 @@ var View = function (_React$Component2) {
   function View() {
     _classCallCheck(this, View);
 
+    //this.viewNewevent = this.viewNewevent.bind(this);
     var _this2 = _possibleConstructorReturn(this, (View.__proto__ || Object.getPrototypeOf(View)).call(this));
 
-    _this2.viewNewevent = _this2.viewNewevent.bind(_this2);
+    _this2.loadData = _this2.loadData.bind(_this2);
 
     _this2.state = {
       events: []
     };
+
     return _this2;
   }
 
@@ -157,12 +246,12 @@ var View = function (_React$Component2) {
     value: function loadData() {
       var _this3 = this;
 
-      var event = this.state.event;
-      fetch("api/events/" + event.toString()).then(function (res) {
+      var event = this.state.events;
+      fetch("api/events").then(function (res) {
         if (res.ok) {
           res.json().then(function (json) {
             var events = [];
-            json.events.forEach(function (video) {
+            json.records.forEach(function (event) {
               events.push(event);
             });
             _this3.setState({ events: events });
@@ -175,14 +264,16 @@ var View = function (_React$Component2) {
   }, {
     key: "render",
     value: function render() {
-      var eventForm = React.createElement(CMyComponent, { event: this.state.event });
+      //	console.log(this.state.events)
       return React.createElement(
         "div",
         null,
         React.createElement(
           "div",
           { id: "view" },
-          eventForm,
+          React.createElement("hr", null),
+          React.createElement(EventTable, { events: this.state.events }),
+          React.createElement("hr", null),
           React.createElement(
             "button",
             { id: "edit" },

@@ -8,6 +8,39 @@ var contentNode = document.getElementById("contents");
 //var contentNode2 = document.getElementById('eventinfo');
 //var contentNode3 = document.getElementById('eventbuttons');
 //signup = view, login = create
+const EventRow = (props) => (
+  <tr>
+    <td>{props.event.name}</td>
+    <td>{props.event.description}</td>
+    <td>{props.event.date}</td>
+    <td>{props.event.location}</td>
+    <td>{props.event.attendees}</td>
+  </tr>
+);
+
+function EventTable(props) {
+  console.log(props.events);
+  // NEW: we replace issue.id with issue._id to work with mongo objects.
+  const eventRows = props.events.map(event => (
+    <EventRow key={event._id} event={event} />
+  ));
+  console.log(eventRows);
+  return (
+    <table className="bordered-table">
+      <thead>
+        <tr>
+          <th>Id</th>
+          <th>Title</th>
+          <th>Description</th>
+          <th>Date</th>
+          <th>Location</th>
+          <th>Attendees</th>
+        </tr>
+      </thead>
+      <tbody>{eventRows}</tbody>
+    </table>
+  );
+}
 
 let MyComponent  = React.createClass({
     getInitialState:function(){
@@ -25,8 +58,8 @@ let MyComponent  = React.createClass({
               return (
                 <div>
                       <div id="buttons">
-                        <button id="viewButton"onClick={this.switch.bind(null,"view")} className={this.state.view}>View Event</button>
-                        <button id="createButton"onClick={this.switch.bind(null,"create")} className={this.state.create}>Create Event</button>
+                        <button id="viewButton" onClick={this.switch.bind(null,"view")} className={this.state.view}>View Event</button>
+                        <button id="createButton" onClick={this.switch.bind(null,"create")} className={this.state.create}>Create Event</button>
                        </div>
                         {this.state.view?<View />:null}
                         {this.state.create?<Create />:null}
@@ -124,13 +157,16 @@ loadData(){
       });
 
   }
+  
 
     render(){
     //	console.log(this.state.events)
         return (
         <div>
               <div id="view">
-              <button id="calendar" onClick={this.loadData}>All Events</button><br></br>
+              <hr />
+              <EventTable events={this.state.events} />
+              <hr />
               <button id="edit">Edit</button><br></br>
               <button id="calendar"><a href="/view02.html">Calendar</a></button>
               </div>
