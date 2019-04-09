@@ -33,11 +33,12 @@ function validateEvent(event) {
 app.get('/api/events', (req, res) => {
   db.collection('events').find().toArray().then(events => {
     const metadata = { total_count: events.length };
-    res.json({ _metadata: metadata, records: events })
+    res.json({ success: true, _metadata: metadata, records: events })
   }).catch(error => {
     console.log(error);
-    res.status(500).json({ message: `Internal Server Error: ${error}` });
+    res.status(500).json({ success:false, message: `Internal Server Error: ${error}` });
   });
+  console.log("hi");
 });
 
 app.post('/api/events', (req, res) => {

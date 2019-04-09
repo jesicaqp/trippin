@@ -90,11 +90,12 @@ var Create = function (_React$Component) {
       }).then(function (res) {
         return res.json();
       }).then(function (json) {
-        console.log(json.success);
+        // console.log(json.success);
         if (json.success) {
-          alert(json.msg);
-        } else {
           alert('Failed to add event.\n Error description: ' + json.msg);
+        } else {
+          console.log(json);
+          alert(json.msg);
         }
       });
     }
@@ -138,6 +139,8 @@ var View = function (_React$Component2) {
 
     var _this2 = _possibleConstructorReturn(this, (View.__proto__ || Object.getPrototypeOf(View)).call(this));
 
+    _this2.viewNewevent = _this2.viewNewevent.bind(_this2);
+
     _this2.state = {
       events: []
     };
@@ -145,17 +148,22 @@ var View = function (_React$Component2) {
   }
 
   _createClass(View, [{
-    key: "eventData",
-    value: function eventData() {
+    key: "componentDidMount",
+    value: function componentDidMount() {
+      this.loadData();
+    }
+  }, {
+    key: "loadData",
+    value: function loadData() {
       var _this3 = this;
 
-      var eventID = this.state.eventID;
-      fetch("api/events/" + eventID.toString()).then(function (res) {
+      var event = this.state.event;
+      fetch("api/events/" + event.toString()).then(function (res) {
         if (res.ok) {
           res.json().then(function (json) {
             var events = [];
             json.events.forEach(function (video) {
-              events.push(events);
+              events.push(event);
             });
             _this3.setState({ events: events });
           });
@@ -167,13 +175,14 @@ var View = function (_React$Component2) {
   }, {
     key: "render",
     value: function render() {
+      var eventForm = React.createElement(CMyComponent, { event: this.state.event });
       return React.createElement(
         "div",
         null,
         React.createElement(
           "div",
           { id: "view" },
-          this.state.events,
+          eventForm,
           React.createElement(
             "button",
             { id: "edit" },

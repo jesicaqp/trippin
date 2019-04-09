@@ -60,12 +60,13 @@ let MyComponent  = React.createClass({
 
     .then(res => res.json())
     .then(json => {
-      console.log(json.success);
+     // console.log(json.success);
       if (json.success) {
-        alert(json.msg);
+      alert('Failed to add event.\n Error description: ' + json.msg);
       }
       else {
-        alert('Failed to add event.\n Error description: ' + json.msg);
+        console.log(json)
+        alert(json.msg);
       }
     });
   }
@@ -88,41 +89,51 @@ let MyComponent  = React.createClass({
   class View extends React.Component {
          constructor() {
          super();
+         this.viewNewevent = this.viewNewevent.bind(this);
+
          this.state = {
-          events: []
+          events: [],
          };
     }
 
-    eventData(){
-    let eventID = this.state.eventID;
-    fetch("api/events/" + eventID.toString())
-      .then( res => {
+    componentDidMount() {
+    this.loadData();
+  }
+
+ 
+loadData(){
+    let event = this.state.event;
+    fetch("api/events/" + event.toString())
+      .then(res => {
         if (res.ok) {
           res.json().then( json => {
             let events = [];
             json.events.forEach(video => {
               events.push(
-                events
+                event
               )
             });
             this.setState({events: events})
           })
         }
-      }).catch(err => {
+      }).catch( err => {
         alert("There was a problem: " + err.message)
       });
   }
-                render(){
-                return (
-                      <div>
-                        <div id="view">
-                          {this.state.events}
-                          <button id="edit">Edit</button><br></br>
-                          <button id="calendar"><a href="/view02.html">Calendar</a></button>
-                        </div>
-                      </div>
-                    );
-                  }
-                }
-  
+
+    render(){
+      let eventForm = <Create event={this.state.event} />
+        return (
+        <div>
+              <div id="view">
+              {eventForm}
+              <button id="edit">Edit</button><br></br>
+              <button id="calendar"><a href="/view02.html">Calendar</a></button>
+              </div>
+        </div>
+        );
+      }
+    }
+
+ 
   ReactDOM.render(<MyComponent />, contentNode);
