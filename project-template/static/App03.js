@@ -13,91 +13,81 @@ var state = [];
 
 // This grabs the DOM element to be used to mount React components.
 var contentNode = document.getElementById("contents");
-//var contentNode2 = document.getElementById('eventinfo');
-//var contentNode3 = document.getElementById('eventbuttons');
-//signup = view, login = create
+
 var EventRow = function EventRow(props) {
   return React.createElement(
-    "tr",
-    null,
+    "ul",
+    { id: "data" },
     React.createElement(
-      "td",
-      null,
-      props.event.name
+      "div",
+      { "class": "row" },
+      "Name:",
+      React.createElement(
+        "li",
+        null,
+        props.event.name
+      )
     ),
+    React.createElement("br", null),
     React.createElement(
-      "td",
-      null,
-      props.event.description
+      "div",
+      { "class": "row" },
+      "Location:",
+      React.createElement(
+        "li",
+        null,
+        props.event.location
+      )
     ),
+    React.createElement("br", null),
     React.createElement(
-      "td",
-      null,
-      props.event.date
+      "div",
+      { "class": "row" },
+      "Date:",
+      React.createElement(
+        "li",
+        null,
+        props.event.eventdate
+      )
     ),
+    React.createElement("br", null),
     React.createElement(
-      "td",
-      null,
-      props.event.location
+      "div",
+      { "class": "row" },
+      "Description:",
+      React.createElement(
+        "li",
+        null,
+        props.event.description
+      )
     ),
+    React.createElement("br", null),
     React.createElement(
-      "td",
-      null,
-      props.event.attendees
-    )
+      "div",
+      { "class": "row" },
+      "Attendees:",
+      React.createElement(
+        "li",
+        null,
+        props.event.attendees
+      )
+    ),
+    React.createElement("br", null),
+    React.createElement("br", null)
   );
 };
 
 function EventTable(props) {
   console.log(props.events);
-  // NEW: we replace issue.id with issue._id to work with mongo objects.
   var eventRows = props.events.map(function (event) {
     return React.createElement(EventRow, { key: event._id, event: event });
   });
   console.log(eventRows);
   return React.createElement(
-    "table",
-    { className: "bordered-table" },
+    "div",
+    { id: "bordered-table" },
     React.createElement(
-      "thead",
-      null,
-      React.createElement(
-        "tr",
-        null,
-        React.createElement(
-          "th",
-          null,
-          "Id"
-        ),
-        React.createElement(
-          "th",
-          null,
-          "Title"
-        ),
-        React.createElement(
-          "th",
-          null,
-          "Description"
-        ),
-        React.createElement(
-          "th",
-          null,
-          "Date"
-        ),
-        React.createElement(
-          "th",
-          null,
-          "Location"
-        ),
-        React.createElement(
-          "th",
-          null,
-          "Attendees"
-        )
-      )
-    ),
-    React.createElement(
-      "tbody",
+      "ul",
       null,
       eventRows
     )
@@ -165,9 +155,9 @@ var Create = function (_React$Component) {
       var submitReq = {
         "name": form.name.value,
         "location": form.location.value,
-        "date": form.date.value,
+        "eventdate": form.eventDate.value,
         "description": form.desc.value,
-        "attendees": form.desc.value
+        "attendees": form.attendee.value
 
       };
       fetch('/api/events', {
@@ -199,11 +189,11 @@ var Create = function (_React$Component) {
           React.createElement("br", null),
           React.createElement("input", { type: "location", id: "location", placeholder: "Event Location" }),
           React.createElement("br", null),
-          React.createElement("input", { type: "date", id: "date", placeholder: "Event Date" }),
+          React.createElement("input", { type: "text", id: "eventDate", placeholder: "Event Date" }),
           React.createElement("br", null),
           React.createElement("input", { type: "description", id: "desc", placeholder: "Event Description" }),
           React.createElement("br", null),
-          React.createElement("input", { type: "attendeelist", id: "desc", placeholder: "Event Attendee List" }),
+          React.createElement("input", { type: "attendeelist", id: "attendee", placeholder: "Event Attendee List" }),
           React.createElement("br", null),
           React.createElement(
             "button",
@@ -264,7 +254,8 @@ var View = function (_React$Component2) {
   }, {
     key: "render",
     value: function render() {
-      //	console.log(this.state.events)
+
+      console.log(this.state.events);
       return React.createElement(
         "div",
         null,
