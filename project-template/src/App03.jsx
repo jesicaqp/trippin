@@ -18,11 +18,9 @@ const EventRow = (props) => (
 );
 
 function EventTable(props) {
-  console.log(props.events);
   const eventRows = props.events.map(event => (
     <EventRow key={event._id} event={event} />
   ));
-  console.log(eventRows);
   return (
     <div id="bordered-table">
     <ul>
@@ -88,7 +86,6 @@ let MyComponent  = React.createClass({
       alert('Failed to add event.\n Error description: ' + json.msg);
       }
       else {
-        console.log(json)
         alert(json.msg);
       }
     });
@@ -150,8 +147,6 @@ loadData(){
   
 
     render(){
-
-    	console.log(this.state.events)
         return (
         <div>
               <div id="view">
