@@ -5,40 +5,30 @@ const state = [
 
 // This grabs the DOM element to be used to mount React components.
 var contentNode = document.getElementById("contents");
-//var contentNode2 = document.getElementById('eventinfo');
-//var contentNode3 = document.getElementById('eventbuttons');
-//signup = view, login = create
+
 const EventRow = (props) => (
-  <tr>
-    <td>{props.event.name}</td>
-    <td>{props.event.description}</td>
-    <td>{props.event.date}</td>
-    <td>{props.event.location}</td>
-    <td>{props.event.attendees}</td>
-  </tr>
+  <ul id="data">
+   <div class="row">Name:<li>{props.event.name}</li></div><br></br>
+    <div class="row">Location:<li>{props.event.location}</li></div><br></br>
+    <div class="row">Date:<li>{props.event.eventdate}</li></div><br></br>
+    <div class="row">Description:<li>{props.event.description}</li></div><br></br>
+    <div class="row">Attendees:<li>{props.event.attendees}</li></div><br></br>
+    <br></br>
+  </ul>
 );
 
 function EventTable(props) {
   console.log(props.events);
-  // NEW: we replace issue.id with issue._id to work with mongo objects.
   const eventRows = props.events.map(event => (
     <EventRow key={event._id} event={event} />
   ));
   console.log(eventRows);
   return (
-    <table className="bordered-table">
-      <thead>
-        <tr>
-          <th>Id</th>
-          <th>Title</th>
-          <th>Description</th>
-          <th>Date</th>
-          <th>Location</th>
-          <th>Attendees</th>
-        </tr>
-      </thead>
-      <tbody>{eventRows}</tbody>
-    </table>
+    <div id="bordered-table">
+    <ul>
+      {eventRows}
+      </ul>
+    </div>
   );
 }
 
@@ -80,9 +70,9 @@ let MyComponent  = React.createClass({
     const submitReq = {
         "name": form.name.value,
         "location": form.location.value,
-        "date": form.date.value,
+        "eventdate": form.eventDate.value,
         "description" : form.desc.value,
-        "attendees": form.desc.value
+        "attendees": form.attendee.value
       
     }
      fetch('/api/events', {
@@ -106,12 +96,12 @@ let MyComponent  = React.createClass({
               render(){
               return (
                   <div>
-                     <form id="create" name="event" onSubmit={this.handleEvent}>
+                      <form id="create" name="event" onSubmit={this.handleEvent}>
                       <input type="text" id="name" placeholder="Event Name"/><br></br>
                       <input type="location" id="location" placeholder="Event Location"/><br></br>
-                      <input type="date" id="date" placeholder="Event Date"/><br></br>
+                      <input type="text" id="eventDate" placeholder="Event Date"/><br></br>
                       <input type="description" id="desc" placeholder="Event Description"/><br></br>
-                      <input type="attendeelist" id="desc" placeholder="Event Attendee List"/><br></br>
+                      <input type="attendeelist" id="attendee" placeholder="Event Attendee List"/><br></br>
                       <button id="save" type="submit">SAVE</button>
                   </form>
                 </div>
@@ -160,21 +150,20 @@ loadData(){
   
 
     render(){
-    //	console.log(this.state.events)
+
+    	console.log(this.state.events)
         return (
         <div>
               <div id="view">
-              <hr />
-              <EventTable events={this.state.events} />
-              <hr />
-              <button id="edit">Edit</button><br></br>
-              <button id="calendar"><a href="/view02.html">Calendar</a></button>
-              </div>
-        </div>
-        );
+                <hr />
+                <EventTable events={this.state.events} />
+                <hr />
+                <button id="edit">Edit</button><br></br>
+                <button id="calendar"><a href="/view02.html">Calendar</a></button>
+                </div>
+             </div>   
+          );
+        }
       }
-    }
 
-
- 
-  ReactDOM.render(<MyComponent />, contentNode);
+ReactDOM.render(<MyComponent />, contentNode);
