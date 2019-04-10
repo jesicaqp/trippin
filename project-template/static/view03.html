@@ -74,11 +74,35 @@
         align-content:center
     }
 
-    #name,#location,#date,#desc
+    	#name,#location,#eventDate,#desc,#attendee
     {
         height:15%;
         width:100%;
     }
+
+      #data
+    {
+    	list-style-type: none;
+    	text-align: center;
+    }
+   
+
+     #column 
+	{
+    	float: left;
+    	padding: 10px;
+    	
+	}
+	#left, #right 
+	{
+  		width: 50%;
+	}
+
+	#row:after 
+	{
+    	content: "";
+    	clear: both;
+	}
 
 </style>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-polyfill/6.13.0/polyfill.js"> </script>
