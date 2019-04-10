@@ -7,8 +7,10 @@
     #nextButton{
         text-align:right
     }
+    a{
+        text-decoration: none;
+    }
 </style>
-
 <head>
     <meta charset="UTF-8" />
     <title>View 02</title>
@@ -31,12 +33,10 @@
                 image.tracker = 'Jan';
             }
         }
-        </script>
-        
-        
+     </script>
+            
    
 </head>
-
 <body>
     <!-- this is where our component will appear -->
 
@@ -48,9 +48,8 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
 
     <script id = "next"> 
-            <button id = "Feb" onclick = "changeJan()">Next Month</button>
-            <button id = "Jan" onclick = "changeFeb()"> Previous Month</button>
-          </script>
+        <button id = "Feb" onclick = "changeJan()">Next Month</button>
+        <button id = "Jan" onclick = "changeFeb()"> Previous Month</button>
+    </script>
 </body>
-
 </html>

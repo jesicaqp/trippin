@@ -8,11 +8,11 @@ var contentNode = document.getElementById("contents");
 
 const EventRow = (props) => (
   <ul id="data">
-   <div class="row">Name:<li>{props.event.name}</li></div><br></br>
-    <div class="row">Location:<li>{props.event.location}</li></div><br></br>
-    <div class="row">Date:<li>{props.event.eventdate}</li></div><br></br>
-    <div class="row">Description:<li>{props.event.description}</li></div><br></br>
-    <div class="row">Attendees:<li>{props.event.attendees}</li></div><br></br>
+   <div className="row">Name:<li>{props.event.name}</li></div><br></br>
+    <div className="row">Location:<li>{props.event.location}</li></div><br></br>
+    <div className="row">Date:<li>{props.event.eventdate}</li></div><br></br>
+    <div className="row">Description:<li>{props.event.description}</li></div><br></br>
+    <div className="row">Attendees:<li>{props.event.attendees}</li></div><br></br>
     <br></br>
   </ul>
 );
@@ -43,15 +43,15 @@ let MyComponent  = React.createClass({
       },
       
       render:function(){
-              return (
-                <div>
-                      <div id="buttons">
-                        <button id="viewButton" onClick={this.switch.bind(null,"view")} className={this.state.view}>View Event</button>
-                        <button id="createButton" onClick={this.switch.bind(null,"create")} className={this.state.create}>Create Event</button>
-                       </div>
-                        {this.state.view?<View />:null}
-                        {this.state.create?<Create />:null}
+        return (
+          <div>
+                <div id="buttons">
+                  <button id="viewButton" onClick={this.switch.bind(null,"view")} className={this.state.view}>View Event</button>
+                  <button id="createButton" onClick={this.switch.bind(null,"create")} className={this.state.create}>Create Event</button>
                   </div>
+                  {this.state.view?<View />:null}
+                  {this.state.create?<Create />:null}
+            </div>
                 )
               }
             })
@@ -86,7 +86,7 @@ let MyComponent  = React.createClass({
       alert('Failed to add event.\n Error description: ' + json.msg);
       }
       else {
-        alert(json.msg);
+        alert('Event Saved');
       }
     });
   }

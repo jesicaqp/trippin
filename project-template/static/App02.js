@@ -81,6 +81,33 @@ var MyComponent = function (_React$Component) {
           )
         ),
         React.createElement(
+          "button",
+          { type: "button", "class": "btn btn-primary" },
+          React.createElement(
+            "a",
+            { href: "#" },
+            "My Account"
+          )
+        ),
+        React.createElement(
+          "button",
+          { type: "button", "class": "btn btn-primary" },
+          React.createElement(
+            "a",
+            { href: "#" },
+            "Friends"
+          )
+        ),
+        React.createElement(
+          "button",
+          { type: "button", "class": "btn btn-primary" },
+          React.createElement(
+            "a",
+            { href: "/view01.html" },
+            "Sign Out"
+          )
+        ),
+        React.createElement(
           "center",
           null,
           React.createElement(

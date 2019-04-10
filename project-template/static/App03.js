@@ -20,7 +20,7 @@ var EventRow = function EventRow(props) {
     { id: "data" },
     React.createElement(
       "div",
-      { "class": "row" },
+      { className: "row" },
       "Name:",
       React.createElement(
         "li",
@@ -31,7 +31,7 @@ var EventRow = function EventRow(props) {
     React.createElement("br", null),
     React.createElement(
       "div",
-      { "class": "row" },
+      { className: "row" },
       "Location:",
       React.createElement(
         "li",
@@ -42,7 +42,7 @@ var EventRow = function EventRow(props) {
     React.createElement("br", null),
     React.createElement(
       "div",
-      { "class": "row" },
+      { className: "row" },
       "Date:",
       React.createElement(
         "li",
@@ -53,7 +53,7 @@ var EventRow = function EventRow(props) {
     React.createElement("br", null),
     React.createElement(
       "div",
-      { "class": "row" },
+      { className: "row" },
       "Description:",
       React.createElement(
         "li",
@@ -64,7 +64,7 @@ var EventRow = function EventRow(props) {
     React.createElement("br", null),
     React.createElement(
       "div",
-      { "class": "row" },
+      { className: "row" },
       "Attendees:",
       React.createElement(
         "li",
@@ -78,11 +78,9 @@ var EventRow = function EventRow(props) {
 };
 
 function EventTable(props) {
-  console.log(props.events);
   var eventRows = props.events.map(function (event) {
     return React.createElement(EventRow, { key: event._id, event: event });
   });
-  console.log(eventRows);
   return React.createElement(
     "div",
     { id: "bordered-table" },
@@ -171,8 +169,7 @@ var Create = function (_React$Component) {
         if (json.success) {
           alert('Failed to add event.\n Error description: ' + json.msg);
         } else {
-          console.log(json);
-          alert(json.msg);
+          alert('Event Saved');
         }
       });
     }
@@ -254,8 +251,6 @@ var View = function (_React$Component2) {
   }, {
     key: "render",
     value: function render() {
-
-      console.log(this.state.events);
       return React.createElement(
         "div",
         null,

@@ -46,6 +46,9 @@ class MyComponent extends React.Component {
     return (
       <div>
         <button type="button" class="btn btn-primary"><a href="/view03.html">Create Event+</a></button>
+        <button type="button" class="btn btn-primary"><a href="#">My Account</a></button>
+        <button type="button" class="btn btn-primary"><a href="#">Friends</a></button>
+        <button type="button" class="btn btn-primary"><a href="/view01.html">Sign Out</a></button>
        <center><h1>Calendar View</h1></center> 
       </div>
   

@@ -8,76 +8,64 @@ var contentNode = document.getElementById("contents");
 //var contentNode2 = document.getElementById('eventinfo');
 //var contentNode3 = document.getElementById('eventbuttons');
 //signup = view, login = create
-let MyComponent  = React.createClass({
-    getInitialState:function(){
-      return {create:false,view:true}
-    },
-      switch:function(word)
-      {
-      let create, view;
-      if(word == "create"){create = true;view = false;}
-      else{view = true; create = false;}
-      return this.setState({view:view,create:create})
-      },
+
+var Dropdown = React.createClass({
+  getInitialState: function() {
+    return {
+      listVisible: false
+    };
+  },
+  
+  select: function(item) {
+    this.props.selected = item;
+  },
+        
+  show: function() {
+    this.setState({ listVisible: true });
+    document.addEventListener("click", this.hide);
+  },
+        
+  hide: function() {
+    this.setState({ listVisible: false });
+    document.removeEventListener("click", this.hide);
+  },
       
-      render:function(){
-              return (
-                <div>
-                      <div id="buttons">
-                        <button id="viewButton"onClick={this.switch.bind(null,"view")} className={this.state.view}>View Event</button>
-                        <button id="createButton"onClick={this.switch.bind(null,"create")} className={this.state.create}>Create Event</button>
-                       </div>
-                        {this.state.view?<View />:null}
-                        {this.state.create?<Create />:null}
-                  </div>
-                )
-              }
-            })
-  
-  class Create extends React.Component {    
-    constructor() {
-      super();
+  render: function() {
+    return <div className={"dropdown-container" + (this.state.listVisible ? " show" : "")}>
+      <div className={"dropdown-display" + (this.state.listVisible ? " clicked": "")} onClick={this.show}>
+        <span style={{ color: this.props.selected.hex }}>{this.props.selected.name}</span>
+        <i className="fa fa-angle-down"></i>
+      </div>
+      <div className="dropdown-list">
+        <div>
+          {this.renderListItems()}
+        </div>
+      </div>
+    </div>;
+  },
+        
+  renderListItems: function() {
+    var items = [];
+    for (var i = 0; i < this.props.list.length; i++) {
+      var item = this.props.list[i];
+      items.push(<div onClick={this.select.bind(null, item)}>
+        <span style={{ color: item.hex }}>{item.name}</span>
+      </div>);
     }
-              render(){
-              return (
-                  <div>
-                     <div id="create">
-                      <input type="text" id="name" placeholder="Event Name"/><br></br>
-                      <input type="location" id="location" placeholder="Event Location"/><br></br>
-                      <input type="date" id="date" placeholder="Event Date"/><br></br>
-                      <input type="description" id="desc" placeholder="Event Description"/><br></br>
-                      <input type="attendeelist" id="desc" placeholder="Event Attendee List"/><br></br>
-                      <button id="save">SAVE</button>
-                  </div>
-                </div>
-              );
-            }
-          }
+    return items;
+  }
+});
+      
+var colours = [{
+  name: "Red",
+  hex: "#F21B1B"
+}, {
+  name: "Blue",
+  hex: "#1B66F2"
+}, {
+  name: "Green",
+  hex: "#07BA16"
+}];
+
+React.render(<Dropdown list={colours} selected={colours[0]} />, contentNode);
   
-  class View extends React.Component {
-         constructor() {
-         super();
-    }
-                render(){
-                return (
-                      <div>
-                        <div id="view">
-                         
-                          <label for="edate"><h3><b>Event Date</b></h3></label>
-                          <text>03/25/2019 to 04/02/2019</text>
-                          <label for="elocation"><h3><b>Event Location</b></h3></label>
-                          <text>This event will take place in Cape Cod, Massachusetts.</text>
-                          <label for="edescritpion"><h3><b>Event Description</b></h3></label>
-                          <text>A week of fun and relaxation for students before the second round of midterms. We will be celebrating the start of spring and the start of warmer temperatures and sunny skies. </text>
-                          <label for="einvitelist"><h3><b>Event Attendee List</b></h3></label>
-                          <text>Jesica Quinones, Aibhlin Fitzpatrick, Arushi Ahmed.</text> 
-                          <br></br>
-                          <button id="edit"><a href="/view03.html">Edit</a></button><br></br>
-                          <button id="calendar"><a href="/view02.html">Calendar</a></button>
-                        </div>
-                      </div>
-                    );
-                  }
-                }
-  
-  ReactDOM.render(<MyComponent />, contentNode);
