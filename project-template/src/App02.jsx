@@ -12,7 +12,7 @@ var contentNode2 = document.getElementById("event");
 
 let Calender  = React.createClass({
   getInitialState:function(){
-    return {next:false,previous:true}
+    return {next:true,previous:false}
   },
     switch:function(word)
     {
@@ -26,8 +26,8 @@ let Calender  = React.createClass({
             return (
               <div>
                     <div id="buttons">
-                      <button id="signupButton"onClick={this.switch.bind(null,"previous")} className={this.state.perivous}>Previous Month</button>
-                      <button id="loginButton"onClick={this.switch.bind(null,"next")} className={this.state.next}>Next Month</button>
+                      <button id="signupButton"onClick={this.switch.bind(null,"previous")} className={this.state.perivous}>Past Events</button>
+                      <button id="loginButton"onClick={this.switch.bind(null,"next")} className={this.state.next}>Upcoming Events</button>
                      </div>
                       {this.state.previous?<Previous/>:null}
                       {this.state.next?<Next />:null}

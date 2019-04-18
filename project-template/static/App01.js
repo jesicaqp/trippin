@@ -82,7 +82,7 @@ var Signup = function (_React$Component) {
             { id: "send" },
             React.createElement(
               "a",
-              { href: "/view02.html" },
+              { href: "/view03.html" },
               "Sign Up"
             )
           )

@@ -19,7 +19,7 @@ var Calender = React.createClass({
   displayName: "Calender",
 
   getInitialState: function getInitialState() {
-    return { next: false, previous: true };
+    return { next: true, previous: false };
   },
   switch: function _switch(word) {
     var previous = void 0,
@@ -42,12 +42,12 @@ var Calender = React.createClass({
         React.createElement(
           "button",
           { id: "signupButton", onClick: this.switch.bind(null, "previous"), className: this.state.perivous },
-          "Previous Month"
+          "Past Events"
         ),
         React.createElement(
           "button",
           { id: "loginButton", onClick: this.switch.bind(null, "next"), className: this.state.next },
-          "Next Month"
+          "Upcoming Events"
         )
       ),
       this.state.previous ? React.createElement(Previous, null) : null,

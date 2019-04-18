@@ -46,7 +46,7 @@ let MyComponent  = React.createClass({
         return (
           <div>
                 <div id="buttons">
-                  <button id="viewButton" onClick={this.switch.bind(null,"view")} className={this.state.view}>View Event</button>
+                  <button id="viewButton" onClick={this.switch.bind(null,"view")} className={this.state.view}>View Events</button>
                   <button id="createButton" onClick={this.switch.bind(null,"create")} className={this.state.create}>Create Event</button>
                   </div>
                   {this.state.view?<View />:null}
