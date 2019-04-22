@@ -1,4 +1,3 @@
-
 // This is a place holder for the initial application state.
 const state = [
 
@@ -7,10 +6,24 @@ const state = [
 
 // This grabs the DOM element to be used to mount React components.
 var contentNode = document.getElementById("contents");
-var contentNode2 = document.getElementById("event");
 
+document.addEventListener('DOMContentLoaded', function() {
+  var calendarEl = document.getElementById('calendar');
 
-let Calender  = React.createClass({
+  var calendar = new FullCalendar.Calendar(calendarEl, {
+    plugins: [ 'interaction', 'dayGrid' ],
+    defaultDate: '2019-04-12',
+    editable: true,
+    eventLimit: true, // allow "more" link when too many events
+    events: [
+   
+       ]
+  });
+
+  calendar.render();
+});
+
+let MyComponent  = React.createClass({
   getInitialState:function(){
     return {next:true,previous:false}
   },
@@ -25,36 +38,28 @@ let Calender  = React.createClass({
     render:function(){
             return (
               <div>
-                    <div id="buttons">
-                      <button id="signupButton"onClick={this.switch.bind(null,"previous")} className={this.state.perivous}>Past Events</button>
-                      <button id="loginButton"onClick={this.switch.bind(null,"next")} className={this.state.next}>Upcoming Events</button>
-                     </div>
-                      {this.state.previous?<Previous/>:null}
-                      {this.state.next?<Next />:null}
+                <div className= "container">
+                <nav className="navbar navbar-light">
+                <a className="navbar-brand"></a>
+                <div id="next">
+                  <button id="view"onClick={this.switch.bind(null,"next")} className={this.state.next}>Calendar</button>
+                </div>
+                    <a className="btn btn-primary" href="/view03.html" role="button">Create Event+</a>
+                    <button type="button" className="btn btn-primary">My Account</button>
+                    <div id="previous">
+                    <button id="friends"onClick={this.switch.bind(null,"previous")} className={this.state.perivous}>Friends</button>            
+                    </div>
+                 <a className="btn btn-primary" href="/view01.html" role="button">Sign Out</a>
+                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" />
+                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+                </nav>
+                </div>
+                {this.state.next?<Next />:null}
+                {this.state.previous?<Previous/>:null}
                 </div>
               )
             }
           })
-
-
-class MyComponent extends React.Component {
-  constructor() {
-    super();
-  }
-
-  render() {
-    return (
-      <div>
-        <button type="button" class="btn btn-primary"><a href="/view03.html">Create Event+</a></button>
-        <button type="button" class="btn btn-primary"><a href="#">My Account</a></button>
-        <button type="button" class="btn btn-primary"><a href="#">Friends</a></button>
-        <button type="button" class="btn btn-primary"><a href="/view01.html">Sign Out</a></button>
-       <center><h1>Calendar View</h1></center> 
-      </div>
-  
-    );
-  }
-}
 
  class Next extends React.Component {    
   constructor() {
@@ -64,8 +69,9 @@ class MyComponent extends React.Component {
             return (
                 <div>
                    <div id="next">
-                      <center> <img src="https://i.pinimg.com/originals/e7/70/0c/e7700c74cda27fcce7b1f6ebf971e455.jpg" width="700" height="500"></img></center>
-                  </div>
+                   <h1>Calendar View</h1> 
+                   <center><div id='calendar'></div></center>
+                  </div> 
               </div>
             );
           }
@@ -78,15 +84,16 @@ class Previous extends React.Component {
             render(){
             return (
                 <div>
-                   <div id="previous">
-                      <center> <img src="https://i.pinimg.com/originals/84/9b/bf/849bbfa252a24fb4734242a23a957ee8.jpg" width= "700" height="500"></img></center>
+                   <div id="friends">
+                   <h1>Friends List</h1>                
                 </div>
               </div>
             );
           }
         }     
 
-
+        
+        
 // This renders the JSX component inside the content node:
-ReactDOM.render(<Calender />, contentNode);
-ReactDOM.render(<MyComponent />, contentNode2);
+ReactDOM.render(<MyComponent />, contentNode);
+

@@ -119,7 +119,7 @@ var MyComponent = React.createClass({
         React.createElement(
           "button",
           { id: "viewButton", onClick: this.switch.bind(null, "view"), className: this.state.view },
-          "View Events"
+          "View Event"
         ),
         React.createElement(
           "button",

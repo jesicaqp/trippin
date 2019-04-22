@@ -1,4 +1,4 @@
-"use strict";
+'use strict';
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
@@ -13,10 +13,23 @@ var state = [];
 
 // This grabs the DOM element to be used to mount React components.
 var contentNode = document.getElementById("contents");
-var contentNode2 = document.getElementById("event");
 
-var Calender = React.createClass({
-  displayName: "Calender",
+document.addEventListener('DOMContentLoaded', function () {
+  var calendarEl = document.getElementById('calendar');
+
+  var calendar = new FullCalendar.Calendar(calendarEl, {
+    plugins: ['interaction', 'dayGrid'],
+    defaultDate: '2019-04-12',
+    editable: true,
+    eventLimit: true, // allow "more" link when too many events
+    events: []
+  });
+
+  calendar.render();
+});
+
+var MyComponent = React.createClass({
+  displayName: 'MyComponent',
 
   getInitialState: function getInitialState() {
     return { next: true, previous: false };
@@ -34,97 +47,64 @@ var Calender = React.createClass({
 
   render: function render() {
     return React.createElement(
-      "div",
+      'div',
       null,
       React.createElement(
-        "div",
-        { id: "buttons" },
+        'div',
+        { className: 'container' },
         React.createElement(
-          "button",
-          { id: "signupButton", onClick: this.switch.bind(null, "previous"), className: this.state.perivous },
-          "Past Events"
-        ),
-        React.createElement(
-          "button",
-          { id: "loginButton", onClick: this.switch.bind(null, "next"), className: this.state.next },
-          "Upcoming Events"
+          'nav',
+          { className: 'navbar navbar-light' },
+          React.createElement('a', { className: 'navbar-brand' }),
+          React.createElement(
+            'div',
+            { id: 'next' },
+            React.createElement(
+              'button',
+              { id: 'view', onClick: this.switch.bind(null, "next"), className: this.state.next },
+              'Calendar'
+            )
+          ),
+          React.createElement(
+            'a',
+            { className: 'btn btn-primary', href: '/view03.html', role: 'button' },
+            'Create Event+'
+          ),
+          React.createElement(
+            'button',
+            { type: 'button', className: 'btn btn-primary' },
+            'My Account'
+          ),
+          React.createElement(
+            'div',
+            { id: 'previous' },
+            React.createElement(
+              'button',
+              { id: 'friends', onClick: this.switch.bind(null, "previous"), className: this.state.perivous },
+              'Friends'
+            )
+          ),
+          React.createElement(
+            'a',
+            { className: 'btn btn-primary', href: '/view01.html', role: 'button' },
+            'Sign Out'
+          ),
+          React.createElement('input', { 'class': 'form-control mr-sm-2', type: 'search', placeholder: 'Search', 'aria-label': 'Search' }),
+          React.createElement(
+            'button',
+            { 'class': 'btn btn-outline-success my-2 my-sm-0', type: 'submit' },
+            'Search'
+          )
         )
       ),
-      this.state.previous ? React.createElement(Previous, null) : null,
-      this.state.next ? React.createElement(Next, null) : null
+      this.state.next ? React.createElement(Next, null) : null,
+      this.state.previous ? React.createElement(Previous, null) : null
     );
   }
 });
 
-var MyComponent = function (_React$Component) {
-  _inherits(MyComponent, _React$Component);
-
-  function MyComponent() {
-    _classCallCheck(this, MyComponent);
-
-    return _possibleConstructorReturn(this, (MyComponent.__proto__ || Object.getPrototypeOf(MyComponent)).call(this));
-  }
-
-  _createClass(MyComponent, [{
-    key: "render",
-    value: function render() {
-      return React.createElement(
-        "div",
-        null,
-        React.createElement(
-          "button",
-          { type: "button", "class": "btn btn-primary" },
-          React.createElement(
-            "a",
-            { href: "/view03.html" },
-            "Create Event+"
-          )
-        ),
-        React.createElement(
-          "button",
-          { type: "button", "class": "btn btn-primary" },
-          React.createElement(
-            "a",
-            { href: "#" },
-            "My Account"
-          )
-        ),
-        React.createElement(
-          "button",
-          { type: "button", "class": "btn btn-primary" },
-          React.createElement(
-            "a",
-            { href: "#" },
-            "Friends"
-          )
-        ),
-        React.createElement(
-          "button",
-          { type: "button", "class": "btn btn-primary" },
-          React.createElement(
-            "a",
-            { href: "/view01.html" },
-            "Sign Out"
-          )
-        ),
-        React.createElement(
-          "center",
-          null,
-          React.createElement(
-            "h1",
-            null,
-            "Calendar View"
-          )
-        )
-      );
-    }
-  }]);
-
-  return MyComponent;
-}(React.Component);
-
-var Next = function (_React$Component2) {
-  _inherits(Next, _React$Component2);
+var Next = function (_React$Component) {
+  _inherits(Next, _React$Component);
 
   function Next() {
     _classCallCheck(this, Next);
@@ -133,19 +113,23 @@ var Next = function (_React$Component2) {
   }
 
   _createClass(Next, [{
-    key: "render",
+    key: 'render',
     value: function render() {
       return React.createElement(
-        "div",
+        'div',
         null,
         React.createElement(
-          "div",
-          { id: "next" },
+          'div',
+          { id: 'next' },
           React.createElement(
-            "center",
+            'h1',
             null,
-            " ",
-            React.createElement("img", { src: "https://i.pinimg.com/originals/e7/70/0c/e7700c74cda27fcce7b1f6ebf971e455.jpg", width: "700", height: "500" })
+            'Calendar View'
+          ),
+          React.createElement(
+            'center',
+            null,
+            React.createElement('div', { id: 'calendar' })
           )
         )
       );
@@ -155,8 +139,8 @@ var Next = function (_React$Component2) {
   return Next;
 }(React.Component);
 
-var Previous = function (_React$Component3) {
-  _inherits(Previous, _React$Component3);
+var Previous = function (_React$Component2) {
+  _inherits(Previous, _React$Component2);
 
   function Previous() {
     _classCallCheck(this, Previous);
@@ -165,19 +149,18 @@ var Previous = function (_React$Component3) {
   }
 
   _createClass(Previous, [{
-    key: "render",
+    key: 'render',
     value: function render() {
       return React.createElement(
-        "div",
+        'div',
         null,
         React.createElement(
-          "div",
-          { id: "previous" },
+          'div',
+          { id: 'friends' },
           React.createElement(
-            "center",
+            'h1',
             null,
-            " ",
-            React.createElement("img", { src: "https://i.pinimg.com/originals/84/9b/bf/849bbfa252a24fb4734242a23a957ee8.jpg", width: "700", height: "500" })
+            'Friends List'
           )
         )
       );
@@ -190,5 +173,4 @@ var Previous = function (_React$Component3) {
 // This renders the JSX component inside the content node:
 
 
-ReactDOM.render(React.createElement(Calender, null), contentNode);
-ReactDOM.render(React.createElement(MyComponent, null), contentNode2);
+ReactDOM.render(React.createElement(MyComponent, null), contentNode);

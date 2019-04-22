@@ -1,55 +1,34 @@
 <!DOCTYPE HTML>
-<html>
-<style>
-    #sec1{
-        text-align:right
-    }
-    #nextButton{
-        text-align:right
-    }
-    a{
-        text-decoration: none;
-    }
-</style>
+<html lang="en">
 <head>
-    <meta charset="UTF-8" />
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <title>View 02</title>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-polyfill/6.13.0/polyfill.js"> </script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.2.1/react.js">
-    </script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.2.1/react-dom.js">
-    </script>
-  <link src = "https://i.pinimg.com/originals/e7/70/0c/e7700c74cda27fcce7b1f6ebf971e455.jpg"/>
-    <script>
-        var image_tracker = 'Jan'
-        function changeJan() {
-            var image = document.getElementById('next');
-            if(image_tracker == 'Jan'){
-                image.src = "https://i.pinimg.com/originals/e7/70/0c/e7700c74cda27fcce7b1f6ebf971e455.jpg";
-                image.tracker = 'Feb';
-            }
-            else{
-                image.src = "https://i.pinimg.com/originals/84/9b/bf/849bbfa252a24fb4734242a23a957ee8.jpg";
-                image.tracker = 'Jan';
-            }
-        }
-     </script>
-            
-   
+	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="./styles.css"> </style>
+	    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-polyfill/6.13.0/polyfill.js"> </script>
+	    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.2.1/react.js"> </script>
+	    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.2.1/react-dom.js"></script>
+		<link src = "https://i.pinimg.com/originals/e7/70/0c/e7700c74cda27fcce7b1f6ebf971e455.jpg"/>
+		<link href='./fullcalendar-4.0.2/packages/core/main.css' rel='stylesheet' />
+<link href='./fullcalendar-4.0.2/packages/daygrid/main.css' rel='stylesheet' />
+<script src='./fullcalendar-4.0.2/packages/core/main.js'></script>
+<script src='./fullcalendar-4.0.2/packages/interaction/main.js'></script>
+<script src='./fullcalendar-4.0.2/packages/daygrid/main.js'></script>
+
+
 </head>
 <body>
     <!-- this is where our component will appear -->
 
-    <div id="event"></div>
-    <div id="contents"></div>
-
+	<div id="contents"></div>
+	<div id="events"></div>
+	
     <script src="/App02.js"></script>
      <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-
-    <script id = "next"> 
-        <button id = "Feb" onclick = "changeJan()">Next Month</button>
-        <button id = "Jan" onclick = "changeFeb()"> Previous Month</button>
-    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script> 
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script> 
+       
 </body>
 </html>
