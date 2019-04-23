@@ -64,7 +64,7 @@ class Signup extends React.Component {
                 <label for = "inputPassword">Confirm Password</label>
                 <input type="password" className = "form-control" id="password"placeholder=" Password"/>
               </div>  
-              <button id="send"><a href="/view02.html">Sign Up</a></button>
+              <button id="send"><a href="/view03.html">Sign Up</a></button>
 
             </form>
 
