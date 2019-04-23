@@ -30,13 +30,14 @@ body
 
 	#buttons
 	{
-		height:65px;
+        height:65px;
 	}
 
 	#buttons > button 
 	{
 		width:49.95%;
-		float:left;
+        float:left;
+        border: 2px solid rgb(20, 140, 159);
 		color: black;
 		text-align:center;
 		height:75%;
@@ -68,16 +69,20 @@ body
 		margin-left:125px;
 		margin-top:20px;
 		height:25px;
-	}
-
-	.userimage
-	{
-	    background-color: #fff;
-	    border: 2px solid black;    
-	    width: 150px;
-	    height: 150px;
-	    border-radius: 50%; 
-	    margin: auto;
-	    text-align: center;
-
-	}
+	}    
+    .name
+    {
+        background-color: rgb(20, 140, 159);
+	    border: 2px solid rgb(20, 140, 159);    
+        margin: auto;
+        border-radius: 50%;
+        text-align: center;
+        font-family: cursive; 
+        font-size: 90px;
+        color: #fff;
+        height: 350px; 
+        width: 350px;
+        line-height: 350px;
+    }
+       
+        

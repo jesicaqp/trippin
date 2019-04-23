@@ -62,23 +62,11 @@ class Signup extends React.Component {
               </div>  
               <div className = "form-group">
                 <label for = "inputPassword">Confirm Password</label>
-                <input type="password" className = "form-control" id="password"placeholder=" Password"/>
+                <input type="password" className= "form-control" id="password"placeholder=" Password"/>
               </div>  
-              <button id="send"><a href="/view03.html">Sign Up</a></button>
-
+              <a className="btn btn-info" href="/view03.html" role="button">Create Event</a>
             </form>
 
-
-
-              /*   <div>
-                   <div id="signup">
-                   <input type="text" id="name" placeholder="Username"/>
-                    <input type="email" id="email" placeholder="Email"/>
-                    <input type="password" id="password" placeholder="Password"/>
-                    <input type="password" id="confirm" placeholder="Confirm Password"/>
-                    <button id="send"><a href="/view02.html">Sign Up</a></button>
-                </div>
-              </div> */
             );
           }
         }
@@ -92,7 +80,6 @@ class Login extends React.Component {
                     
                         <form>
                         <div className = "form-group">
-                          {/* <div id="login"> */}
                           <label for = "inputEmail">Username</label>
                           <input type="email" className = "form-control" id="inputEmail" placeholder=" Username"/>
                         </div>
@@ -100,8 +87,7 @@ class Login extends React.Component {
                           <label for = "inputPassword">Password</label>
                           <input type="password" className = "form-control" id="password"placeholder=" Password"/>
                         </div>  
-
-                        <button id="send"><a href="/view02.html">Login</a></button>
+                        <a className="btn btn-info" href="/view02.html" role="button">Login</a>
                       </form>
                   );
                 }

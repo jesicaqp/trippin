@@ -124,26 +124,11 @@ var Signup = function (_React$Component) {
           React.createElement("input", { type: "password", className: "form-control", id: "password", placeholder: " Password" })
         ),
         React.createElement(
-          "button",
-          { id: "send" },
-          React.createElement(
-            "a",
-            { href: "/view03.html" },
-            "Sign Up"
-          )
+          "a",
+          { className: "btn btn-info", href: "/view03.html", role: "button" },
+          "Create Event"
         )
-      )
-
-      /*   <div>
-           <div id="signup">
-           <input type="text" id="name" placeholder="Username"/>
-            <input type="email" id="email" placeholder="Email"/>
-            <input type="password" id="password" placeholder="Password"/>
-            <input type="password" id="confirm" placeholder="Confirm Password"/>
-            <button id="send"><a href="/view02.html">Sign Up</a></button>
-        </div>
-      </div> */
-      ;
+      );
     }
   }]);
 
@@ -186,13 +171,9 @@ var Login = function (_React$Component2) {
           React.createElement("input", { type: "password", className: "form-control", id: "password", placeholder: " Password" })
         ),
         React.createElement(
-          "button",
-          { id: "send" },
-          React.createElement(
-            "a",
-            { href: "/view02.html" },
-            "Login"
-          )
+          "a",
+          { className: "btn btn-info", href: "/view02.html", role: "button" },
+          "Login"
         )
       );
     }
