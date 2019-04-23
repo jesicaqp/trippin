@@ -603,13 +603,13 @@ Lots taken from Flatly (MIT): https://bootswatch.com/4/flatly/bootstrap.css
   border-radius: 0.25em; }
 
 .fc-button:hover {
-  color: #212529;
+  color: rgb(20, 140, 159);
   text-decoration: none; }
 
 .fc-button:focus {
   outline: 0;
-  -webkit-box-shadow: 0 0 0 0.2rem rgba(44, 62, 80, 0.25);
-  box-shadow: 0 0 0 0.2rem rgba(44, 62, 80, 0.25); }
+  -webkit-box-shadow: 0 0 0 0.2rem rgb(20, 140, 159);
+  box-shadow: 0 0 0 0.2rem rgb(20, 140, 159) }
 
 .fc-button:disabled {
   opacity: 0.65; }
@@ -617,33 +617,33 @@ Lots taken from Flatly (MIT): https://bootswatch.com/4/flatly/bootstrap.css
 /* "primary" coloring */
 .fc-button-primary {
   color: #fff;
-  background-color: #2C3E50;
-  border-color: #2C3E50; }
+  background-color: rgb(20, 140, 159);
+  border-color: rgb(20, 140, 159); }
 
 .fc-button-primary:hover {
   color: #fff;
-  background-color: #1e2b37;
-  border-color: #1a252f; }
+  background-color: rgb(20, 140, 159);
+  border-color: rgb(20, 140, 159) }
 
 .fc-button-primary:focus {
-  -webkit-box-shadow: 0 0 0 0.2rem rgba(76, 91, 106, 0.5);
-  box-shadow: 0 0 0 0.2rem rgba(76, 91, 106, 0.5); }
+  -webkit-box-shadow: 0 0 0 0.2rem rgb(20, 140, 159);
+  box-shadow: 0 0 0 0.2rem rgb(20, 140, 159); }
 
 .fc-button-primary:disabled {
   color: #fff;
-  background-color: #2C3E50;
-  border-color: #2C3E50; }
+  background-color: rgb(20, 140, 159);
+  border-color: rgb(20, 140, 159) }
 
 .fc-button-primary:not(:disabled):active,
 .fc-button-primary:not(:disabled).fc-button-active {
   color: #fff;
-  background-color: #1a252f;
-  border-color: #151e27; }
+  background-color: rgb(20, 140, 159);
+  border-color: rgb(20, 140, 159) }
 
 .fc-button-primary:not(:disabled):active:focus,
 .fc-button-primary:not(:disabled).fc-button-active:focus {
-  -webkit-box-shadow: 0 0 0 0.2rem rgba(76, 91, 106, 0.5);
-  box-shadow: 0 0 0 0.2rem rgba(76, 91, 106, 0.5); }
+  -webkit-box-shadow: 0 0 0 0.2rem rgb(20, 140, 159);
+  box-shadow: 0 0 0 0.2rem rgb(20, 140, 159); }
 
 /* icons within buttons */
 .fc-button .fc-icon {

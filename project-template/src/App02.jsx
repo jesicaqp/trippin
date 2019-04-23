@@ -15,9 +15,6 @@ document.addEventListener('DOMContentLoaded', function() {
     defaultDate: '2019-04-12',
     editable: true,
     eventLimit: true, // allow "more" link when too many events
-    events: [
-   
-       ]
   });
 
   calendar.render();
@@ -39,61 +36,31 @@ let MyComponent  = React.createClass({
             return (
               <div>
                 <div className= "container">
-                <nav className="navbar navbar-light">
-                <a className="navbar-brand"></a>
-                <div id="next">
-                  <button id="view"onClick={this.switch.bind(null,"next")} className={this.state.next}>Calendar</button>
+                  <nav className="navbar navbar-light">
+                    <a className="navbar-brand"></a>
+                  <div id="next">
+                  <a className="btn btn-info" href="/view02.html" role="button">Calendar</a>
+                  </div>
+                      <a className="btn btn-info" href="/view03.html" role="button">Create Event</a>
+                      <button type="button" className="btn btn-info">My Account</button>
+                      <div id="previous">
+                       <button type="button"className="btn btn-info">Friends</button>            
+                      </div>
+                   <a className="btn btn-info" href="/view01.html" role="button">Sign Out</a>
+                   <form className="form-inline">
+                      <input className="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" />
+                      <button className="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+                  </form>
+                  </nav>
                 </div>
-                    <a className="btn btn-primary" href="/view03.html" role="button">Create Event+</a>
-                    <button type="button" className="btn btn-primary">My Account</button>
-                    <div id="previous">
-                    <button id="friends"onClick={this.switch.bind(null,"previous")} className={this.state.perivous}>Friends</button>            
-                    </div>
-                 <a className="btn btn-primary" href="/view01.html" role="button">Sign Out</a>
-                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" />
-                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-                </nav>
-                </div>
-                {this.state.next?<Next />:null}
-                {this.state.previous?<Previous/>:null}
+                <br></br>
+                <center><h1>Calendar View</h1> </center>
+                <center><div id='calendar'></div></center>
                 </div>
               )
             }
           })
-
- class Next extends React.Component {    
-  constructor() {
-    super();
-  }
-            render(){
-            return (
-                <div>
-                   <div id="next">
-                   <h1>Calendar View</h1> 
-                   <center><div id='calendar'></div></center>
-                  </div> 
-              </div>
-            );
-          }
-        }   
-
-class Previous extends React.Component {    
- constructor() {
-    super();
-  }
-            render(){
-            return (
-                <div>
-                   <div id="friends">
-                   <h1>Friends List</h1>                
-                </div>
-              </div>
-            );
-          }
-        }     
-
-        
-        
+          
 // This renders the JSX component inside the content node:
 ReactDOM.render(<MyComponent />, contentNode);
 
