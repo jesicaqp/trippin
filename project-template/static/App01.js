@@ -68,26 +68,82 @@ var Signup = function (_React$Component) {
     key: "render",
     value: function render() {
       return React.createElement(
-        "div",
+        "form",
         null,
         React.createElement(
           "div",
-          { id: "signup" },
-          React.createElement("input", { type: "text", id: "name", placeholder: "Username" }),
-          React.createElement("input", { type: "email", id: "email", placeholder: "Email" }),
-          React.createElement("input", { type: "password", id: "password", placeholder: "Password" }),
-          React.createElement("input", { type: "password", id: "confirm", placeholder: "Confirm Password" }),
+          { className: "form-group" },
           React.createElement(
-            "button",
-            { id: "send" },
+            "label",
+            { "for": "inputName" },
+            "Name"
+          ),
+          React.createElement(
+            "div",
+            { className: "row" },
             React.createElement(
-              "a",
-              { href: "/view02.html" },
-              "Sign Up"
+              "div",
+              { className: "col" },
+              React.createElement("input", { type: "name", className: "form-control", id: "inputName", placeholder: " First Name" })
+            ),
+            React.createElement(
+              "div",
+              { className: "col" },
+              React.createElement("input", { type: "name", className: "form-control", id: "inputName", placeholder: " Last Name" })
             )
           )
+        ),
+        React.createElement(
+          "div",
+          { className: "form-group" },
+          React.createElement(
+            "label",
+            { "for": "inputEmail" },
+            "Username"
+          ),
+          React.createElement("input", { type: "email", className: "form-control", id: "inputEmail", placeholder: " Username" })
+        ),
+        React.createElement(
+          "div",
+          { className: "form-group" },
+          React.createElement(
+            "label",
+            { "for": "inputPassword" },
+            "Password"
+          ),
+          React.createElement("input", { type: "password", className: "form-control", id: "password", placeholder: " Password" })
+        ),
+        React.createElement(
+          "div",
+          { className: "form-group" },
+          React.createElement(
+            "label",
+            { "for": "inputPassword" },
+            "Confirm Password"
+          ),
+          React.createElement("input", { type: "password", className: "form-control", id: "password", placeholder: " Password" })
+        ),
+        React.createElement(
+          "button",
+          { id: "send" },
+          React.createElement(
+            "a",
+            { href: "/view03.html" },
+            "Sign Up"
+          )
         )
-      );
+      )
+
+      /*   <div>
+           <div id="signup">
+           <input type="text" id="name" placeholder="Username"/>
+            <input type="email" id="email" placeholder="Email"/>
+            <input type="password" id="password" placeholder="Password"/>
+            <input type="password" id="confirm" placeholder="Confirm Password"/>
+            <button id="send"><a href="/view02.html">Sign Up</a></button>
+        </div>
+      </div> */
+      ;
     }
   }]);
 
@@ -107,21 +163,35 @@ var Login = function (_React$Component2) {
     key: "render",
     value: function render() {
       return React.createElement(
-        "div",
+        "form",
         null,
         React.createElement(
           "div",
-          { id: "login" },
-          React.createElement("input", { type: "email", id: "email", placeholder: "Username" }),
-          React.createElement("input", { type: "password", id: "password", placeholder: "Password" }),
+          { className: "form-group" },
           React.createElement(
-            "button",
-            { id: "send" },
-            React.createElement(
-              "a",
-              { href: "/view02.html" },
-              "Login"
-            )
+            "label",
+            { "for": "inputEmail" },
+            "Username"
+          ),
+          React.createElement("input", { type: "email", className: "form-control", id: "inputEmail", placeholder: " Username" })
+        ),
+        React.createElement(
+          "div",
+          { className: "form-group" },
+          React.createElement(
+            "label",
+            { "for": "inputPassword" },
+            "Password"
+          ),
+          React.createElement("input", { type: "password", className: "form-control", id: "password", placeholder: " Password" })
+        ),
+        React.createElement(
+          "button",
+          { id: "send" },
+          React.createElement(
+            "a",
+            { href: "/view02.html" },
+            "Login"
           )
         )
       );
