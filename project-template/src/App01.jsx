@@ -38,7 +38,39 @@ class Signup extends React.Component {
   }
             render(){
             return (
-                <div>
+
+              <form>
+                <div className = "form-group">
+                <label for = "inputName">Name</label>
+                  <div className = "row">
+                    <div className="col">
+                      <input type="name" className = "form-control" id="inputName" placeholder=" First Name"/>
+                   </div> 
+                    <div className="col">
+                     <input  type="name" className = "form-control" id="inputName" placeholder=" Last Name"/>
+                    </div> 
+                 </div>              
+              </div>
+
+                <div className = "form-group">  
+                   <label for = "inputEmail">Username</label>
+                    <input type="email" className = "form-control" id="inputEmail" placeholder=" Username"/>
+                  </div>
+              <div className = "form-group">
+                <label for = "inputPassword">Password</label>
+                <input type="password" className = "form-control" id="password"placeholder=" Password"/>
+              </div>  
+              <div className = "form-group">
+                <label for = "inputPassword">Confirm Password</label>
+                <input type="password" className = "form-control" id="password"placeholder=" Password"/>
+              </div>  
+              <button id="send"><a href="/view02.html">Login</a></button>
+
+            </form>
+
+
+
+              /*   <div>
                    <div id="signup">
                    <input type="text" id="name" placeholder="Username"/>
                     <input type="email" id="email" placeholder="Email"/>
@@ -46,7 +78,7 @@ class Signup extends React.Component {
                     <input type="password" id="confirm" placeholder="Confirm Password"/>
                     <button id="send"><a href="/view02.html">Sign Up</a></button>
                 </div>
-              </div>
+              </div> */
             );
           }
         }
@@ -57,13 +89,20 @@ class Login extends React.Component {
   }
               render(){
               return (
-                    <div>
-                      <div id="login">
-                      <input type="email" id="email" placeholder="Username"/>
-                      <input type="password" id="password" placeholder="Password"/>
-                      <button id="send"><a href="/view02.html">Login</a></button>
-                      </div>
-                    </div>
+                    
+                        <form>
+                        <div className = "form-group">
+                          {/* <div id="login"> */}
+                          <label for = "inputEmail">Username</label>
+                          <input type="email" className = "form-control" id="inputEmail" placeholder=" Username"/>
+                        </div>
+                        <div className = "form-group">
+                          <label for = "inputPassword">Password</label>
+                          <input type="password" className = "form-control" id="password"placeholder=" Password"/>
+                        </div>  
+
+                        <button id="send"><a href="/view02.html">Login</a></button>
+                      </form>
                   );
                 }
               }
