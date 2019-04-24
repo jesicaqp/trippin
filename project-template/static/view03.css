@@ -1,0 +1,97 @@
+ body
+{
+		width:100%;
+		height:700px;
+		margin:0;
+        align-content:center;
+}
+
+	#contents > div
+	{
+		width:500px;
+		margin:auto;
+		margin-top:5%;
+        text-align: center;
+        align-content: center;
+	}
+
+	#view,#create 
+	{
+		width:100%;
+		height:250px;
+	}
+
+	#view{height:$height;} 
+	
+	#create{height:$height / 2;}
+
+	#buttons
+	{
+		height:65px;
+	}
+
+	#buttons > button 
+	{
+		width:49.95%;
+        float:left;
+        border: 2px solid rgb(20, 140, 159);
+		color: black;
+		text-align:center;
+		height:75%;
+		margin:0;
+	}
+
+	#buttons > button:hover
+	{
+		background:white;
+		cursor:pointer;
+	}
+		
+	#view > input, #create > button
+	{
+		margin-top:20px;
+		height:25px;
+	}
+		
+	#save
+    {
+        margin-top: 20px;
+        width: 10%;
+    }
+		
+    #edit,#calendar
+    {
+        margin-top:20px;
+        width:25%;
+        align-content:center
+    }
+
+    	#name,#location,#eventDate,#desc,#attendee
+    {
+        height:15%;
+        width:100%;
+    }
+
+      #data
+    {
+    	list-style-type: none;
+    	text-align: center;
+    }
+   
+
+     #column 
+	{
+    	float: left;
+    	padding: 10px;
+    	
+	}
+	#left, #right 
+	{
+  		width: 50%;
+	}
+
+	#row:after 
+	{
+    	content: "";
+    	clear: both;
+	}

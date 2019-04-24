@@ -181,21 +181,67 @@ var Create = function (_React$Component) {
         null,
         React.createElement(
           "form",
-          { id: "create", name: "event", onSubmit: this.handleEvent },
-          React.createElement("input", { type: "text", id: "name", placeholder: "Event Name" }),
-          React.createElement("br", null),
-          React.createElement("input", { type: "location", id: "location", placeholder: "Event Location" }),
-          React.createElement("br", null),
-          React.createElement("input", { type: "text", id: "eventDate", placeholder: "Event Date" }),
-          React.createElement("br", null),
-          React.createElement("input", { type: "description", id: "desc", placeholder: "Event Description" }),
-          React.createElement("br", null),
-          React.createElement("input", { type: "attendeelist", id: "attendee", placeholder: "Event Attendee List" }),
-          React.createElement("br", null),
+          null,
+          React.createElement(
+            "div",
+            { className: "form-group" },
+            React.createElement(
+              "div",
+              { className: "row" },
+              React.createElement(
+                "label",
+                { "for": "inputName" },
+                "Event Name"
+              ),
+              React.createElement("input", { input: true, type: "name", className: "form-control", id: "inputName", placeholder: "Event Name" })
+            )
+          ),
+          React.createElement(
+            "div",
+            { className: "form-group" },
+            React.createElement(
+              "div",
+              { className: "row" },
+              React.createElement(
+                "label",
+                { "for": "inputName" },
+                "Location"
+              ),
+              React.createElement("input", { input: true, type: "name", className: "form-control", id: "inputName", placeholder: "Location " })
+            )
+          ),
+          React.createElement(
+            "div",
+            { className: "form-group" },
+            React.createElement(
+              "div",
+              { className: "row" },
+              React.createElement(
+                "label",
+                { "for": "inputName" },
+                "Event Name"
+              ),
+              React.createElement("input", { input: true, type: "name", className: "form-control", id: "inputName", placeholder: "Description" })
+            )
+          ),
+          React.createElement(
+            "div",
+            { className: "form-group" },
+            React.createElement(
+              "div",
+              { className: "row" },
+              React.createElement(
+                "label",
+                { "for": "inputName" },
+                "Event Name"
+              ),
+              React.createElement("input", { input: true, type: "name", className: "form-control", id: "inputName", placeholder: "Event Attendee List" })
+            )
+          ),
           React.createElement(
             "button",
-            { id: "save", type: "submit" },
-            "SAVE"
+            { type: "submit", className: "btn btn-info", onSubmit: this.handleEvent },
+            "Submit"
           )
         )
       );
@@ -262,18 +308,15 @@ var View = function (_React$Component2) {
           React.createElement("hr", null),
           React.createElement(
             "button",
-            { id: "edit" },
+            { type: "button", className: "btn btn-info" },
             "Edit"
           ),
           React.createElement("br", null),
+          React.createElement("br", null),
           React.createElement(
-            "button",
-            { id: "calendar" },
-            React.createElement(
-              "a",
-              { href: "/view02.html" },
-              "Calendar"
-            )
+            "a",
+            { className: "btn btn-info", href: "/view02.html", role: "button" },
+            "Calendar"
           )
         )
       );
