@@ -63,7 +63,7 @@ app.post('/api/events', (req, res) => {
   });
 });
 
-
+/*
 const userName = {
   name: 'required', 
   email: 'required',
@@ -93,11 +93,10 @@ app.get('/api/username', (req, res) => {
     res.status(500).json({ success:false, message: `Internal Server Error: ${error}` });
   });
 });
-
-let db, db2;
+*/
+let db
 MongoClient.connect('mongodb://localhost', { useNewUrlParser: true }).then(connection => {
   db = connection.db('eventsTracker');
-  db2 = connection.db('useracounts')
   app.listen(3000, () => {
     console.log('App started on port 3000');
   });

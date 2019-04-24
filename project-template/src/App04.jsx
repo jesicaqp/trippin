@@ -95,8 +95,6 @@ loadData(){
               <hr />
               <FriendTable friends={this.state.friends} />
               <hr />
-              <button type="button" className="btn btn-info">Edit</button>
-              <br></br>
               <br></br>
               <a className="btn btn-info" href="/view02.html" role="button">Calendar</a>
               </div> 
