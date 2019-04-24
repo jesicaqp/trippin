@@ -38,15 +38,10 @@ let MyComponent  = React.createClass({
                 <div className= "container">
                   <nav className="navbar navbar-light">
                     <a className="navbar-brand"></a>
-                  <div id="next">
-                  <a className="btn btn-info" href="/view02.html" role="button">Calendar</a>
-                  </div>
+                      <a className="btn btn-info" href="/view02.html" role="button">Calendar</a>
                       <a className="btn btn-info" href="/view03.html" role="button">Create Event</a>
-                      <button type="button" className="btn btn-info">My Account</button>
-                      <div id="previous">
-                       <button type="button"className="btn btn-info">Friends</button>            
-                      </div>
-                   <a className="btn btn-info" href="/view01.html" role="button">Sign Out</a>
+                      <a className="btn btn-info" href="/view04.html" role="button">Profile</a>
+                      <a className="btn btn-info" href="/view01.html" role="button">Sign Out</a>
                    <form className="form-inline">
                       <input className="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" />
                       <button className="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>

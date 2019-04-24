@@ -38,5 +38,4 @@ db.events.insert([
 	"attendees" : "Jesica Quinones, Aibhlin Fitzpatrick, Arushi Ahmed.",
 },
 
-
 ]);

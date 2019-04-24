@@ -48,13 +48,9 @@ var MyComponent = React.createClass({
           { className: 'navbar navbar-light' },
           React.createElement('a', { className: 'navbar-brand' }),
           React.createElement(
-            'div',
-            { id: 'next' },
-            React.createElement(
-              'a',
-              { className: 'btn btn-info', href: '/view02.html', role: 'button' },
-              'Calendar'
-            )
+            'a',
+            { className: 'btn btn-info', href: '/view02.html', role: 'button' },
+            'Calendar'
           ),
           React.createElement(
             'a',
@@ -62,18 +58,9 @@ var MyComponent = React.createClass({
             'Create Event'
           ),
           React.createElement(
-            'button',
-            { type: 'button', className: 'btn btn-info' },
-            'My Account'
-          ),
-          React.createElement(
-            'div',
-            { id: 'previous' },
-            React.createElement(
-              'button',
-              { type: 'button', className: 'btn btn-info' },
-              'Friends'
-            )
+            'a',
+            { className: 'btn btn-info', href: '/view04.html', role: 'button' },
+            'Profile'
           ),
           React.createElement(
             'a',
