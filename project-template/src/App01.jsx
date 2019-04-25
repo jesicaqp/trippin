@@ -58,13 +58,13 @@ class Signup extends React.Component {
                   </div>
               <div className = "form-group">
                 <label for = "inputPassword">Password</label>
-                <input type="password" className = "form-control" id="password"placeholder=" Password"/>
+                <input type="password" className = "form-control" id="inputPassword"placeholder=" Password"/>
               </div>  
               <div className = "form-group">
                 <label for = "inputPassword">Confirm Password</label>
-                <input type="password" className= "form-control" id="password"placeholder=" Password"/>
+                <input type="password" className= "form-control" id="inputPassword"placeholder=" Password"/>
               </div>  
-              <a className="btn btn-info" href="/view03.html" role="button">Create Event</a>
+              <a className="btn btn-info" href="/view03.html" role="button">Sign Up</a>
             </form>
 
             );
@@ -85,7 +85,7 @@ class Login extends React.Component {
                         </div>
                         <div className = "form-group">
                           <label for = "inputPassword">Password</label>
-                          <input type="password" className = "form-control" id="password"placeholder=" Password"/>
+                          <input type="password" className = "form-control" id="inputPassword" placeholder=" Password"/>
                         </div>  
                         <a className="btn btn-info" href="/view02.html" role="button">Login</a>
                       </form>

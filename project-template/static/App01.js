@@ -111,7 +111,7 @@ var Signup = function (_React$Component) {
             { "for": "inputPassword" },
             "Password"
           ),
-          React.createElement("input", { type: "password", className: "form-control", id: "password", placeholder: " Password" })
+          React.createElement("input", { type: "password", className: "form-control", id: "inputPassword", placeholder: " Password" })
         ),
         React.createElement(
           "div",
@@ -121,12 +121,12 @@ var Signup = function (_React$Component) {
             { "for": "inputPassword" },
             "Confirm Password"
           ),
-          React.createElement("input", { type: "password", className: "form-control", id: "password", placeholder: " Password" })
+          React.createElement("input", { type: "password", className: "form-control", id: "inputPassword", placeholder: " Password" })
         ),
         React.createElement(
           "a",
           { className: "btn btn-info", href: "/view03.html", role: "button" },
-          "Create Event"
+          "Sign Up"
         )
       );
     }
@@ -168,7 +168,7 @@ var Login = function (_React$Component2) {
             { "for": "inputPassword" },
             "Password"
           ),
-          React.createElement("input", { type: "password", className: "form-control", id: "password", placeholder: " Password" })
+          React.createElement("input", { type: "password", className: "form-control", id: "inputPassword", placeholder: " Password" })
         ),
         React.createElement(
           "a",
