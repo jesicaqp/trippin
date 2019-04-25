@@ -14,62 +14,6 @@ var state = [];
 // This grabs the DOM element to be used to mount React components.
 var contentNode = document.getElementById("contents");
 
-var friendRow = function friendRow(props) {
-  return React.createElement(
-    "ul",
-    { id: "data" },
-    React.createElement(
-      "div",
-      { className: "row" },
-      "Name:",
-      React.createElement(
-        "li",
-        null,
-        props.friend.name
-      )
-    ),
-    React.createElement("br", null),
-    React.createElement(
-      "div",
-      { className: "row" },
-      "Location:",
-      React.createElement(
-        "li",
-        null,
-        props.friend.email
-      )
-    ),
-    React.createElement("br", null),
-    React.createElement(
-      "div",
-      { className: "row" },
-      "Location:",
-      React.createElement(
-        "li",
-        null,
-        props.friend.username
-      )
-    ),
-    React.createElement("br", null),
-    React.createElement("br", null)
-  );
-};
-
-function FriendTable(props) {
-  var friendRows = props.friends.map(function (friend) {
-    return React.createElement("friendRow", { key: friend._id, friend: friend });
-  });
-  return React.createElement(
-    "div",
-    { id: "bordered-table" },
-    React.createElement(
-      "ul",
-      null,
-      friendRow
-    )
-  );
-}
-
 var MyComponent = React.createClass({
   displayName: "MyComponent",
 
@@ -117,62 +61,16 @@ var FriendsList = function (_React$Component) {
   function FriendsList() {
     _classCallCheck(this, FriendsList);
 
-    var _this = _possibleConstructorReturn(this, (FriendsList.__proto__ || Object.getPrototypeOf(FriendsList)).call(this));
-
-    _this.loadData = _this.loadData.bind(_this);
-
-    _this.state = {
-      friends: []
-    };
-    return _this;
+    return _possibleConstructorReturn(this, (FriendsList.__proto__ || Object.getPrototypeOf(FriendsList)).call(this));
   }
 
   _createClass(FriendsList, [{
-    key: "componentDidMount",
-    value: function componentDidMount() {
-      this.loadData();
-    }
-  }, {
-    key: "loadData",
-    value: function loadData() {
-      var _this2 = this;
-
-      var friend = this.state.friends;
-      fetch("api/username").then(function (res) {
-        if (res.ok) {
-          res.json().then(function (json) {
-            var friends = [];
-            json.friends.forEach(function (friend) {
-              friends.push(friend);
-            });
-            _this2.setState({ friends: friends });
-          });
-        }
-      }).catch(function (err) {
-        alert("There was a problem: " + err.message);
-      });
-    }
-  }, {
     key: "render",
     value: function render() {
       return React.createElement(
         "div",
-        { id: "view" },
-        React.createElement("hr", null),
-        React.createElement(FriendTable, { friends: this.state.friends }),
-        React.createElement("hr", null),
-        React.createElement(
-          "button",
-          { type: "button", className: "btn btn-info" },
-          "Edit"
-        ),
-        React.createElement("br", null),
-        React.createElement("br", null),
-        React.createElement(
-          "a",
-          { className: "btn btn-info", href: "/view02.html", role: "button" },
-          "Calendar"
-        )
+        null,
+        "Friends"
       );
     }
   }]);

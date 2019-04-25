@@ -6,28 +6,6 @@ const state = [
 // This grabs the DOM element to be used to mount React components.
 var contentNode = document.getElementById("contents");
 
-const friendRow = (props) => (
-  <ul id="data">
-    <div className="row">Name:<li>{props.friend.name}</li></div><br></br>
-    <div className="row">Location:<li>{props.friend.email}</li></div><br></br>
-    <div className="row">Location:<li>{props.friend.username}</li></div><br></br>
-    <br></br>
-  </ul>
-);
-
-function FriendTable(props) {
-  const friendRows = props.friends.map(friend => (
-    <friendRow key={friend._id} friend={friend} />
-  ));
-  return (
-    <div id="bordered-table">
-    <ul>
-      {friendRow}
-      </ul>
-    </div>
-  );
-}
-
 let MyComponent  = React.createClass({
   getInitialState:function(){
     return {signup:false,login:true}
@@ -57,47 +35,11 @@ let MyComponent  = React.createClass({
 class FriendsList extends React.Component {    
   constructor() {
     super();
-    this.loadData = this.loadData.bind(this);
-	     
-    this.state = {
-     friends: [],
-    };
   }
 
-  componentDidMount() {
-    this.loadData();
-  }
-
-
-loadData(){
-  let friend = this.state.friends;
-  fetch("api/username")
-    .then(res => {
-      if (res.ok) {
-        res.json().then( json => {
-          let friends = [];
-          json.friends.forEach(friend => {
-            friends.push(
-              friend
-            )
-          });
-          this.setState({friends: friends})
-        })
-      }
-    }).catch( err => {
-      alert("There was a problem: " + err.message)
-    });
-
-}
-            render(){
+          render(){
             return (
-              <div id="view">
-              <hr />
-              <FriendTable friends={this.state.friends} />
-              <hr />
-              <br></br>
-              <a className="btn btn-info" href="/view02.html" role="button">Calendar</a>
-              </div> 
+              <div>Friends</div>
 
             );
           }

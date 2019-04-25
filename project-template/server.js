@@ -94,6 +94,7 @@ app.get('/api/username', (req, res) => {
   });
 });
 */
+
 let db
 MongoClient.connect('mongodb://localhost', { useNewUrlParser: true }).then(connection => {
   db = connection.db('eventsTracker');
