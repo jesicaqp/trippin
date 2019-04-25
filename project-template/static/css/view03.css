@@ -87,6 +87,7 @@ h1
     {
 		list-style-type: none;
 		text-decoration: none;
+		text-align: center;
     
     }
    
@@ -102,9 +103,19 @@ h1
   		width: 50%;
 	}
 
+	.row{
+		text-align: center;
+	}
+
 	.row:after 
 	{
     	content: "";
 		clear: both;
+		text-align: center;
 		
+	}
+
+	.viewEvent
+	{
+		text-align: center;
 	}

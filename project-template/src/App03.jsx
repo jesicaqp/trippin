@@ -9,11 +9,11 @@ var contentNode2 = document.getElementById("search");
 
 const EventRow = (props) => (
   <ul className="data">
-    <div className="row">Name: {props.event.name}</div><br></br>
-    <div className="row">Location: {props.event.location}</div><br></br>
-    <div className="row">Date: {props.event.eventdate}</div><br></br>
-    <div className="row">Description: {props.event.description}</div><br></br>
-    <div className="row">Attendees: {props.event.attendees}</div><br></br>
+    <div className="viewEvent">Name: {props.event.name}</div><br></br>
+    <div className="viewEvent">Location: {props.event.location}</div><br></br>
+    <div className="viewEvent">Date: {props.event.eventdate}</div><br></br>
+    <div className="viewEvent">Description: {props.event.description}</div><br></br>
+    <div className="viewEvent">Attendees: {props.event.attendees}</div><br></br>
     <br></br>
   </ul>
 );
@@ -67,7 +67,7 @@ let MyComponent  = React.createClass({
     e.preventDefault();
     let form = document.forms.event;
     const submitReq = {
-        "name": form.name.value,
+        "name": form.inputName.value,
         "location": form.location.value,
         "eventdate": form.eventDate.value,
         "description" : form.desc.value,
@@ -98,19 +98,19 @@ let MyComponent  = React.createClass({
                 <div className="form-group">
                   <div className="row">
                       <label for="inputName">Event Name</label>
-                      <input type="text" className="form-control" id="inputName" placeholder="Event Name"/>
+                      <input type="text" className="form-control" id="inputName" placeholder="Event Name"/><br></br>
                     </div>
-                </div>
+                  </div>
                  <div className="form-group">
                        <div className="row">
                            <label for="inputAddress">Location</label>
-                             <input type="text" className="form-control" id="inputAddress" placeholder="Event Location"/>
+                            <input type="text" className="form-control" id="location" placeholder="Event Location"/><br></br>
                        </div>
                      </div>
                      <div className="form-group">
                        <div className="row">
                            <label for="inputName">Date</label>
-                           <input type="text" className="form-control" id="inputName" placeholder="Event Date"/>
+                           <input type="text" className="form-control" id="eventDate" placeholder="MM/DD/YYYY"/><br></br>
                        </div>
                      </div>
                      <div className="form-group">

@@ -21,35 +21,35 @@ var EventRow = function EventRow(props) {
     { className: "data" },
     React.createElement(
       "div",
-      { className: "row" },
+      { className: "viewEvent" },
       "Name: ",
       props.event.name
     ),
     React.createElement("br", null),
     React.createElement(
       "div",
-      { className: "row" },
+      { className: "viewEvent" },
       "Location: ",
       props.event.location
     ),
     React.createElement("br", null),
     React.createElement(
       "div",
-      { className: "row" },
+      { className: "viewEvent" },
       "Date: ",
       props.event.eventdate
     ),
     React.createElement("br", null),
     React.createElement(
       "div",
-      { className: "row" },
+      { className: "viewEvent" },
       "Description: ",
       props.event.description
     ),
     React.createElement("br", null),
     React.createElement(
       "div",
-      { className: "row" },
+      { className: "viewEvent" },
       "Attendees: ",
       props.event.attendees
     ),
@@ -132,7 +132,7 @@ var Create = function (_React$Component) {
       e.preventDefault();
       var form = document.forms.event;
       var submitReq = {
-        "name": form.name.value,
+        "name": form.inputName.value,
         "location": form.location.value,
         "eventdate": form.eventDate.value,
         "description": form.desc.value,
@@ -174,7 +174,8 @@ var Create = function (_React$Component) {
                 { "for": "inputName" },
                 "Event Name"
               ),
-              React.createElement("input", { type: "text", className: "form-control", id: "inputName", placeholder: "Event Name" })
+              React.createElement("input", { type: "text", className: "form-control", id: "inputName", placeholder: "Event Name" }),
+              React.createElement("br", null)
             )
           ),
           React.createElement(
@@ -188,7 +189,8 @@ var Create = function (_React$Component) {
                 { "for": "inputAddress" },
                 "Location"
               ),
-              React.createElement("input", { type: "text", className: "form-control", id: "inputAddress", placeholder: "Event Location" })
+              React.createElement("input", { type: "text", className: "form-control", id: "location", placeholder: "Event Location" }),
+              React.createElement("br", null)
             )
           ),
           React.createElement(
@@ -202,7 +204,8 @@ var Create = function (_React$Component) {
                 { "for": "inputName" },
                 "Date"
               ),
-              React.createElement("input", { type: "text", className: "form-control", id: "inputName", placeholder: "Event Date" })
+              React.createElement("input", { type: "text", className: "form-control", id: "eventDate", placeholder: "MM/DD/YYYY" }),
+              React.createElement("br", null)
             )
           ),
           React.createElement(
