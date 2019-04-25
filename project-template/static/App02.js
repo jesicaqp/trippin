@@ -49,13 +49,13 @@ var MyComponent = React.createClass({
           React.createElement('a', { className: 'navbar-brand' }),
           React.createElement(
             'a',
-            { className: 'btn btn-info', href: '/view02.html', role: 'button' },
-            'Calendar'
+            { className: 'btn btn-info', href: '/view03.html', role: 'button' },
+            'Create Event'
           ),
           React.createElement(
             'a',
-            { className: 'btn btn-info', href: '/view03.html', role: 'button' },
-            'Create Event'
+            { className: 'btn btn-info', href: '/view02.html', role: 'button' },
+            'Calendar'
           ),
           React.createElement(
             'a',

@@ -5,14 +5,15 @@ const state = [
 
 // This grabs the DOM element to be used to mount React components.
 var contentNode = document.getElementById("contents");
+var contentNode2 = document.getElementById("search");
 
 const EventRow = (props) => (
   <ul className="data">
-    <div className="row">Name:{props.event.name}</div><br></br>
-    <div className="row">Location:{props.event.location}</div><br></br>
-    <div className="row">Date:{props.event.eventdate}</div><br></br>
-    <div className="row">Description:{props.event.description}</div><br></br>
-    <div className="row">Attendees:{props.event.attendees}</div><br></br>
+    <div className="row">Name: {props.event.name}</div><br></br>
+    <div className="row">Location: {props.event.location}</div><br></br>
+    <div className="row">Date: {props.event.eventdate}</div><br></br>
+    <div className="row">Description: {props.event.description}</div><br></br>
+    <div className="row">Attendees: {props.event.attendees}</div><br></br>
     <br></br>
   </ul>
 );
@@ -94,20 +95,22 @@ let MyComponent  = React.createClass({
               return (
                 <div>
                 <form className="form-group" name="event" onSubmit={this.handleEvent}>                        
-                 <div className="row">
-                     <label for="name">Event Name</label>
-                     <input type="text" className="form-control" id="name" placeholder="Event Name"/><br></br>
-                   </div>
+                <div className="form-group">
+                  <div className="row">
+                      <label for="inputName">Event Name</label>
+                      <input type="text" className="form-control" id="inputName" placeholder="Event Name"/>
+                    </div>
+                </div>
                  <div className="form-group">
                        <div className="row">
-                           <label for="location">Location</label>
-                             <input type="text" className="form-control" id="location" placeholder="Event Location"/><br></br>
+                           <label for="inputAddress">Location</label>
+                             <input type="text" className="form-control" id="inputAddress" placeholder="Event Location"/>
                        </div>
                      </div>
                      <div className="form-group">
                        <div className="row">
                            <label for="inputName">Date</label>
-                           <input type="text" className="form-control" id="eventDate" placeholder="Event Date"/><br></br>
+                           <input type="text" className="form-control" id="inputName" placeholder="Event Date"/>
                        </div>
                      </div>
                      <div className="form-group">
@@ -185,6 +188,37 @@ loadData(){
           );
         }
       }
+       
+class SearchBar extends React.Component {    
+    constructor() {
+      super();
+                    
+    }
+          
+                render(){
+                  return (
+                    <div>
+                      <div className= "container">
+                        <nav className="navbar navbar-light">
+                          <a className="navbar-brand"></a>
+                          <a className="btn btn-info" href="/view03.html" role="button">Create Event</a>
+                            <a className="btn btn-info" href="/view02.html" role="button">Calendar</a>
+                            <a className="btn btn-info" href="/view04.html" role="button">Profile</a>
+                            <a className="btn btn-info" href="/view01.html" role="button">Sign Out</a>
+                        <form className="form-inline">
+                            <input className="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" />
+                            <button className="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+                        </form>
+                        </nav>
+                      </div>
+                <br></br>
+                <center><h1>Events</h1> </center>
+                  </div>
+                    
+                    );
+                }
+          }
       
 
 ReactDOM.render(<MyComponent />, contentNode);
+ReactDOM.render(<SearchBar />, contentNode2);

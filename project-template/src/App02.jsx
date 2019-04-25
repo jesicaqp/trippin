@@ -38,8 +38,8 @@ let MyComponent  = React.createClass({
                 <div className= "container">
                   <nav className="navbar navbar-light">
                     <a className="navbar-brand"></a>
+                    <a className="btn btn-info" href="/view03.html" role="button">Create Event</a>
                       <a className="btn btn-info" href="/view02.html" role="button">Calendar</a>
-                      <a className="btn btn-info" href="/view03.html" role="button">Create Event</a>
                       <a className="btn btn-info" href="/view04.html" role="button">Profile</a>
                       <a className="btn btn-info" href="/view01.html" role="button">Sign Out</a>
                    <form className="form-inline">

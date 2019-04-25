@@ -26,6 +26,7 @@ let MyComponent  = React.createClass({
                        <button id="loginButton"onClick={this.switch.bind(null,"login")} className={this.state.login}>Profile</button>
                       <button id="signupButton"onClick={this.switch.bind(null,"signup")} className={this.state.signup}>Friends</button>
                      </div>
+                     <br></br>
                       {this.state.signup?<FriendsList/>:null}
                       {this.state.login?<Profile />:null}
                 </div>
@@ -45,8 +46,8 @@ class SearchBar extends React.Component {
             <div className= "container">
               <nav className="navbar navbar-light">
                 <a className="navbar-brand"></a>
+                <a className="btn btn-info" href="/view03.html" role="button">Create Event</a>
                   <a className="btn btn-info" href="/view02.html" role="button">Calendar</a>
-                  <a className="btn btn-info" href="/view03.html" role="button">Create Event</a>
                   <a className="btn btn-info" href="/view04.html" role="button">Profile</a>
                   <a className="btn btn-info" href="/view01.html" role="button">Sign Out</a>
               <form className="form-inline">
@@ -69,7 +70,9 @@ class FriendsList extends React.Component {
 
             render(){
             return (
-              <div>Friends</div>
+              <div>
+                  <h1>Friends</h1>
+              </div>
 
             );
           }
@@ -81,8 +84,9 @@ class Profile extends React.Component {
   }
               render(){
               return (
-                    
-                    <div>Profile</div>
+                <div>
+                    <h1>Profile</h1>
+                    </div>
                   );
                 }
               }

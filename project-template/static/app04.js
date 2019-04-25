@@ -50,6 +50,7 @@ var MyComponent = React.createClass({
           "Friends"
         )
       ),
+      React.createElement("br", null),
       this.state.signup ? React.createElement(FriendsList, null) : null,
       this.state.login ? React.createElement(Profile, null) : null
     );
@@ -80,13 +81,13 @@ var SearchBar = function (_React$Component) {
             React.createElement("a", { className: "navbar-brand" }),
             React.createElement(
               "a",
-              { className: "btn btn-info", href: "/view02.html", role: "button" },
-              "Calendar"
+              { className: "btn btn-info", href: "/view03.html", role: "button" },
+              "Create Event"
             ),
             React.createElement(
               "a",
-              { className: "btn btn-info", href: "/view03.html", role: "button" },
-              "Create Event"
+              { className: "btn btn-info", href: "/view02.html", role: "button" },
+              "Calendar"
             ),
             React.createElement(
               "a",
@@ -132,7 +133,11 @@ var FriendsList = function (_React$Component2) {
       return React.createElement(
         "div",
         null,
-        "Friends"
+        React.createElement(
+          "h1",
+          null,
+          "Friends"
+        )
       );
     }
   }]);
@@ -155,7 +160,11 @@ var Profile = function (_React$Component3) {
       return React.createElement(
         "div",
         null,
-        "Profile"
+        React.createElement(
+          "h1",
+          null,
+          "Profile"
+        )
       );
     }
   }]);

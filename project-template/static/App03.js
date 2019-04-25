@@ -13,6 +13,7 @@ var state = [];
 
 // This grabs the DOM element to be used to mount React components.
 var contentNode = document.getElementById("contents");
+var contentNode2 = document.getElementById("search");
 
 var EventRow = function EventRow(props) {
   return React.createElement(
@@ -21,35 +22,35 @@ var EventRow = function EventRow(props) {
     React.createElement(
       "div",
       { className: "row" },
-      "Name:",
+      "Name: ",
       props.event.name
     ),
     React.createElement("br", null),
     React.createElement(
       "div",
       { className: "row" },
-      "Location:",
+      "Location: ",
       props.event.location
     ),
     React.createElement("br", null),
     React.createElement(
       "div",
       { className: "row" },
-      "Date:",
+      "Date: ",
       props.event.eventdate
     ),
     React.createElement("br", null),
     React.createElement(
       "div",
       { className: "row" },
-      "Description:",
+      "Description: ",
       props.event.description
     ),
     React.createElement("br", null),
     React.createElement(
       "div",
       { className: "row" },
-      "Attendees:",
+      "Attendees: ",
       props.event.attendees
     ),
     React.createElement("br", null),
@@ -164,14 +165,17 @@ var Create = function (_React$Component) {
           { className: "form-group", name: "event", onSubmit: this.handleEvent },
           React.createElement(
             "div",
-            { className: "row" },
+            { className: "form-group" },
             React.createElement(
-              "label",
-              { "for": "name" },
-              "Event Name"
-            ),
-            React.createElement("input", { type: "text", className: "form-control", id: "name", placeholder: "Event Name" }),
-            React.createElement("br", null)
+              "div",
+              { className: "row" },
+              React.createElement(
+                "label",
+                { "for": "inputName" },
+                "Event Name"
+              ),
+              React.createElement("input", { type: "text", className: "form-control", id: "inputName", placeholder: "Event Name" })
+            )
           ),
           React.createElement(
             "div",
@@ -181,11 +185,10 @@ var Create = function (_React$Component) {
               { className: "row" },
               React.createElement(
                 "label",
-                { "for": "location" },
+                { "for": "inputAddress" },
                 "Location"
               ),
-              React.createElement("input", { type: "text", className: "form-control", id: "location", placeholder: "Event Location" }),
-              React.createElement("br", null)
+              React.createElement("input", { type: "text", className: "form-control", id: "inputAddress", placeholder: "Event Location" })
             )
           ),
           React.createElement(
@@ -199,8 +202,7 @@ var Create = function (_React$Component) {
                 { "for": "inputName" },
                 "Date"
               ),
-              React.createElement("input", { type: "text", className: "form-control", id: "eventDate", placeholder: "Event Date" }),
-              React.createElement("br", null)
+              React.createElement("input", { type: "text", className: "form-control", id: "inputName", placeholder: "Event Date" })
             )
           ),
           React.createElement(
@@ -319,4 +321,77 @@ var View = function (_React$Component2) {
   return View;
 }(React.Component);
 
+var SearchBar = function (_React$Component3) {
+  _inherits(SearchBar, _React$Component3);
+
+  function SearchBar() {
+    _classCallCheck(this, SearchBar);
+
+    return _possibleConstructorReturn(this, (SearchBar.__proto__ || Object.getPrototypeOf(SearchBar)).call(this));
+  }
+
+  _createClass(SearchBar, [{
+    key: "render",
+    value: function render() {
+      return React.createElement(
+        "div",
+        null,
+        React.createElement(
+          "div",
+          { className: "container" },
+          React.createElement(
+            "nav",
+            { className: "navbar navbar-light" },
+            React.createElement("a", { className: "navbar-brand" }),
+            React.createElement(
+              "a",
+              { className: "btn btn-info", href: "/view03.html", role: "button" },
+              "Create Event"
+            ),
+            React.createElement(
+              "a",
+              { className: "btn btn-info", href: "/view02.html", role: "button" },
+              "Calendar"
+            ),
+            React.createElement(
+              "a",
+              { className: "btn btn-info", href: "/view04.html", role: "button" },
+              "Profile"
+            ),
+            React.createElement(
+              "a",
+              { className: "btn btn-info", href: "/view01.html", role: "button" },
+              "Sign Out"
+            ),
+            React.createElement(
+              "form",
+              { className: "form-inline" },
+              React.createElement("input", { className: "form-control mr-sm-2", type: "search", placeholder: "Search", "aria-label": "Search" }),
+              React.createElement(
+                "button",
+                { className: "btn btn-outline-success my-2 my-sm-0", type: "submit" },
+                "Search"
+              )
+            )
+          )
+        ),
+        React.createElement("br", null),
+        React.createElement(
+          "center",
+          null,
+          React.createElement(
+            "h1",
+            null,
+            "Events"
+          ),
+          " "
+        )
+      );
+    }
+  }]);
+
+  return SearchBar;
+}(React.Component);
+
 ReactDOM.render(React.createElement(MyComponent, null), contentNode);
+ReactDOM.render(React.createElement(SearchBar, null), contentNode2);

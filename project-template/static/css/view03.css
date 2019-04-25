@@ -6,6 +6,12 @@
         align-content:center;
 }
 
+h1
+{
+    font-family: cursive;
+    font-size: 400%;
+}
+
 .navbar 
 {
 	background-color: #e3f2fd;
@@ -81,7 +87,7 @@
     {
 		list-style-type: none;
 		text-decoration: none;
-    	text-align: center;
+    
     }
    
 
@@ -96,15 +102,9 @@
   		width: 50%;
 	}
 
-
 	.row:after 
 	{
     	content: "";
 		clear: both;
-		text-align: center;
-	}
-
-	#bordered-table
-	{
-		text-align: center;
+		
 	}
