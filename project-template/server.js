@@ -63,39 +63,7 @@ app.post('/api/events', (req, res) => {
   });
 });
 
-/*
-const userName = {
-  name: 'required', 
-  email: 'required',
-  username: 'required',
-};
-
-function validateUser(name) {
-  for (const field in userName) {
-    if(userName.hasOwnProperty(field)){
-         const type = userName[field];
-          if (!type) {
-            delete name[field];
-          } else if (type === 'required' && !name[field]) {
-            return `${field} is required.`;
-          }
-    }
-   }
-  return null;
-}
-
-app.get('/api/username', (req, res) => {
-  db.collection('username').find().toArray().then(username => {
-    const metadata = { total_count: username.length };
-    res.json({ success: true, _metadata: metadata, records: username })
-  }).catch(error => {
-    console.log(error);
-    res.status(500).json({ success:false, message: `Internal Server Error: ${error}` });
-  });
-});
-*/
-
-let db
+let db;
 MongoClient.connect('mongodb://localhost', { useNewUrlParser: true }).then(connection => {
   db = connection.db('eventsTracker');
   app.listen(3000, () => {
@@ -104,4 +72,3 @@ MongoClient.connect('mongodb://localhost', { useNewUrlParser: true }).then(conne
 }).catch(error => {
   console.log('ERROR:', error);
 });
-

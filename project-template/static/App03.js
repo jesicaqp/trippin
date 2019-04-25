@@ -17,60 +17,40 @@ var contentNode = document.getElementById("contents");
 var EventRow = function EventRow(props) {
   return React.createElement(
     "ul",
-    { id: "data" },
+    { className: "data" },
     React.createElement(
       "div",
       { className: "row" },
       "Name:",
-      React.createElement(
-        "li",
-        null,
-        props.event.name
-      )
+      props.event.name
     ),
     React.createElement("br", null),
     React.createElement(
       "div",
       { className: "row" },
       "Location:",
-      React.createElement(
-        "li",
-        null,
-        props.event.location
-      )
+      props.event.location
     ),
     React.createElement("br", null),
     React.createElement(
       "div",
       { className: "row" },
       "Date:",
-      React.createElement(
-        "li",
-        null,
-        props.event.eventdate
-      )
+      props.event.eventdate
     ),
     React.createElement("br", null),
     React.createElement(
       "div",
       { className: "row" },
       "Description:",
-      React.createElement(
-        "li",
-        null,
-        props.event.description
-      )
+      props.event.description
     ),
     React.createElement("br", null),
     React.createElement(
       "div",
       { className: "row" },
       "Attendees:",
-      React.createElement(
-        "li",
-        null,
-        props.event.attendees
-      )
+      props.event.attendees
     ),
     React.createElement("br", null),
     React.createElement("br", null)
@@ -181,20 +161,17 @@ var Create = function (_React$Component) {
         null,
         React.createElement(
           "form",
-          null,
+          { className: "form-group", name: "event", onSubmit: this.handleEvent },
           React.createElement(
             "div",
-            { className: "form-group" },
+            { className: "row" },
             React.createElement(
-              "div",
-              { className: "row" },
-              React.createElement(
-                "label",
-                { "for": "inputName" },
-                "Event Name"
-              ),
-              React.createElement("input", { input: true, type: "name", className: "form-control", id: "inputName", placeholder: "Event Name" })
-            )
+              "label",
+              { "for": "name" },
+              "Event Name"
+            ),
+            React.createElement("input", { type: "text", className: "form-control", id: "name", placeholder: "Event Name" }),
+            React.createElement("br", null)
           ),
           React.createElement(
             "div",
@@ -204,10 +181,11 @@ var Create = function (_React$Component) {
               { className: "row" },
               React.createElement(
                 "label",
-                { "for": "inputName" },
+                { "for": "location" },
                 "Location"
               ),
-              React.createElement("input", { input: true, type: "name", className: "form-control", id: "inputName", placeholder: "Location " })
+              React.createElement("input", { type: "text", className: "form-control", id: "location", placeholder: "Event Location" }),
+              React.createElement("br", null)
             )
           ),
           React.createElement(
@@ -219,9 +197,10 @@ var Create = function (_React$Component) {
               React.createElement(
                 "label",
                 { "for": "inputName" },
-                "Event Name"
+                "Date"
               ),
-              React.createElement("input", { input: true, type: "name", className: "form-control", id: "inputName", placeholder: "Description" })
+              React.createElement("input", { type: "text", className: "form-control", id: "eventDate", placeholder: "Event Date" }),
+              React.createElement("br", null)
             )
           ),
           React.createElement(
@@ -232,16 +211,30 @@ var Create = function (_React$Component) {
               { className: "row" },
               React.createElement(
                 "label",
-                { "for": "inputName" },
-                "Event Name"
+                { "for": "desc" },
+                "Description"
               ),
-              React.createElement("input", { input: true, type: "name", className: "form-control", id: "inputName", placeholder: "Event Attendee List" })
+              React.createElement("input", { type: "name", className: "form-control", id: "desc", placeholder: "Description" })
+            )
+          ),
+          React.createElement(
+            "div",
+            { className: "form-group" },
+            React.createElement(
+              "div",
+              { className: "row" },
+              React.createElement(
+                "label",
+                { "for": "attendee" },
+                "Event Attendee List"
+              ),
+              React.createElement("input", { type: "name", className: "form-control", id: "attendee", placeholder: "Event Attendee List" })
             )
           ),
           React.createElement(
             "button",
-            { type: "submit", className: "btn btn-info", onSubmit: this.handleEvent },
-            "Submit"
+            { className: "btn btn-info", type: "submit" },
+            "SAVE"
           )
         )
       );
@@ -308,7 +301,7 @@ var View = function (_React$Component2) {
           React.createElement("hr", null),
           React.createElement(
             "button",
-            { type: "button", className: "btn btn-info" },
+            { className: "btn btn-info", type: "submit" },
             "Edit"
           ),
           React.createElement("br", null),

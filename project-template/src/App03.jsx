@@ -7,12 +7,12 @@ const state = [
 var contentNode = document.getElementById("contents");
 
 const EventRow = (props) => (
-  <ul id="data">
-   <div className="row">Name:<li>{props.event.name}</li></div><br></br>
-    <div className="row">Location:<li>{props.event.location}</li></div><br></br>
-    <div className="row">Date:<li>{props.event.eventdate}</li></div><br></br>
-    <div className="row">Description:<li>{props.event.description}</li></div><br></br>
-    <div className="row">Attendees:<li>{props.event.attendees}</li></div><br></br>
+  <ul className="data">
+    <div className="row">Name:{props.event.name}</div><br></br>
+    <div className="row">Location:{props.event.location}</div><br></br>
+    <div className="row">Date:{props.event.eventdate}</div><br></br>
+    <div className="row">Description:{props.event.description}</div><br></br>
+    <div className="row">Attendees:{props.event.attendees}</div><br></br>
     <br></br>
   </ul>
 );
@@ -92,36 +92,40 @@ let MyComponent  = React.createClass({
   }
               render(){
               return (
-                  <div>
-                      <form>
-                        <div className="form-group">
-                        <div className="row">
-                            <label for="inputName">Event Name</label>
-                            <input input type="name" className = "form-control" id="inputName" placeholder="Event Name" />
-                          </div>
-                        </div>
-                        <div className="form-group">
-                              <div className="row">
-                                  <label for="inputName">Location</label>
-                                  <input input type="name" className = "form-control" id="inputName" placeholder="Location
-                                  " />
-                              </div>
-                            </div>
-                            <div className="form-group">
-                              <div className="row">
-                                  <label for="inputName">Event Name</label>
-                                  <input input type="name" className = "form-control" id="inputName" placeholder="Description" />
-                              </div>
-                            </div>
-                            <div className="form-group">
-                              <div className="row">
-                                  <label for="inputName">Event Name</label>
-                                  <input input type="name" className = "form-control" id="inputName" placeholder="Event Attendee List" />
-                              </div>
-                            </div>
-                        <button type="submit" className="btn btn-info" onSubmit={this.handleEvent}>Submit</button>
-                  </form>
-                </div>
+                <div>
+                <form className="form-group" name="event" onSubmit={this.handleEvent}>                        
+                 <div className="row">
+                     <label for="name">Event Name</label>
+                     <input type="text" className="form-control" id="name" placeholder="Event Name"/><br></br>
+                   </div>
+                 <div className="form-group">
+                       <div className="row">
+                           <label for="location">Location</label>
+                             <input type="text" className="form-control" id="location" placeholder="Event Location"/><br></br>
+                       </div>
+                     </div>
+                     <div className="form-group">
+                       <div className="row">
+                           <label for="inputName">Date</label>
+                           <input type="text" className="form-control" id="eventDate" placeholder="Event Date"/><br></br>
+                       </div>
+                     </div>
+                     <div className="form-group">
+                       <div className="row">
+                           <label for="desc">Description</label>
+                           <input type="name" className = "form-control" id="desc" placeholder="Description" />
+                       </div>
+                     </div>
+                     <div className="form-group">
+                       <div className="row">
+                           <label for="attendee">Event Attendee List</label>
+                           <input type="name" className = "form-control" id="attendee" placeholder="Event Attendee List" />
+                       </div>
+                     </div>
+                  <button className="btn btn-info" type="submit">SAVE</button>
+           </form>
+         </div>
+                 
               );
             }
           }
@@ -172,7 +176,7 @@ loadData(){
                 <hr />
                 <EventTable events={this.state.events} />
                 <hr />
-                <button type="button" className="btn btn-info">Edit</button>
+                <button className="btn btn-info" type="submit">Edit</button>
                 <br></br>
                 <br></br>
                 <a className="btn btn-info" href="/view02.html" role="button">Calendar</a>

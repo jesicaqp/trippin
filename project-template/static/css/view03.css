@@ -72,9 +72,10 @@
         width:100%;
     }
 
-      #data
+     .data
     {
-    	list-style-type: none;
+		list-style-type: none;
+		text-decoration: none;
     	text-align: center;
     }
    
@@ -90,8 +91,15 @@
   		width: 50%;
 	}
 
-	#row:after 
+
+	.row:after 
 	{
     	content: "";
-    	clear: both;
+		clear: both;
+		text-align: center;
+	}
+
+	#bordered-table
+	{
+		text-align: center;
 	}

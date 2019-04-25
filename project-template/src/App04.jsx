@@ -35,9 +35,10 @@ let MyComponent  = React.createClass({
 class FriendsList extends React.Component {    
   constructor() {
     super();
+
   }
 
-          render(){
+            render(){
             return (
               <div>Friends</div>
 
