@@ -13,6 +13,7 @@ var state = [];
 
 // This grabs the DOM element to be used to mount React components.
 var contentNode = document.getElementById("contents");
+var contentNode2 = document.getElementById("search");
 
 var MyComponent = React.createClass({
   displayName: "MyComponent",
@@ -55,8 +56,69 @@ var MyComponent = React.createClass({
   }
 });
 
-var FriendsList = function (_React$Component) {
-  _inherits(FriendsList, _React$Component);
+var SearchBar = function (_React$Component) {
+  _inherits(SearchBar, _React$Component);
+
+  function SearchBar() {
+    _classCallCheck(this, SearchBar);
+
+    return _possibleConstructorReturn(this, (SearchBar.__proto__ || Object.getPrototypeOf(SearchBar)).call(this));
+  }
+
+  _createClass(SearchBar, [{
+    key: "render",
+    value: function render() {
+      return React.createElement(
+        "div",
+        null,
+        React.createElement(
+          "div",
+          { className: "container" },
+          React.createElement(
+            "nav",
+            { className: "navbar navbar-light" },
+            React.createElement("a", { className: "navbar-brand" }),
+            React.createElement(
+              "a",
+              { className: "btn btn-info", href: "/view02.html", role: "button" },
+              "Calendar"
+            ),
+            React.createElement(
+              "a",
+              { className: "btn btn-info", href: "/view03.html", role: "button" },
+              "Create Event"
+            ),
+            React.createElement(
+              "a",
+              { className: "btn btn-info", href: "/view04.html", role: "button" },
+              "Profile"
+            ),
+            React.createElement(
+              "a",
+              { className: "btn btn-info", href: "/view01.html", role: "button" },
+              "Sign Out"
+            ),
+            React.createElement(
+              "form",
+              { className: "form-inline" },
+              React.createElement("input", { className: "form-control mr-sm-2", type: "search", placeholder: "Search", "aria-label": "Search" }),
+              React.createElement(
+                "button",
+                { className: "btn btn-outline-success my-2 my-sm-0", type: "submit" },
+                "Search"
+              )
+            )
+          )
+        )
+      );
+    }
+  }]);
+
+  return SearchBar;
+}(React.Component);
+
+var FriendsList = function (_React$Component2) {
+  _inherits(FriendsList, _React$Component2);
 
   function FriendsList() {
     _classCallCheck(this, FriendsList);
@@ -78,8 +140,8 @@ var FriendsList = function (_React$Component) {
   return FriendsList;
 }(React.Component);
 
-var Profile = function (_React$Component2) {
-  _inherits(Profile, _React$Component2);
+var Profile = function (_React$Component3) {
+  _inherits(Profile, _React$Component3);
 
   function Profile() {
     _classCallCheck(this, Profile);
@@ -102,3 +164,4 @@ var Profile = function (_React$Component2) {
 }(React.Component);
 
 ReactDOM.render(React.createElement(MyComponent, null), contentNode);
+ReactDOM.render(React.createElement(SearchBar, null), contentNode2);

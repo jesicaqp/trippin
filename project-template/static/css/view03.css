@@ -6,6 +6,11 @@
         align-content:center;
 }
 
+.navbar 
+{
+	background-color: #e3f2fd;
+}
+
 	#contents > div
 	{
 		width:500px;
