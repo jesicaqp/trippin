@@ -1,14 +1,15 @@
 # Application Name
 
-Rename the above with the name of your application.
+Trippin
 
 # Overview
 
-Add an overview of your application here.
+Our application provides users with an interactive platform where they can collaborate with their friends/peers to plan group events and know when there friends/peers are busy or free. Once implemented, they will have the ability to collaborate on events and see their friend’s calendars 
 
 # Team Members
-
-Add the team member names who are working on this application.
+1. Arushi Ahmed
+2. Aibhlin Fitzpatrick, 
+3. Jesica Quinones
 
 # Application Initialization
 
