@@ -78,7 +78,7 @@ class FriendsList extends React.Component {
                   <div className="row">
                   <div className="col-sm-4">
                     <div className="card text-center">
-                      <img src="./img/arushi.jpg" class="card-img-top" alt="..." />
+                      <img src="./img/arushi.jpg" className="card-img-top" alt="..." />
                       <div className="card-body">
                         <h5 className="card-title">Arushi Ahmed</h5>
                         <p className="card-text">UMass Amherst 2020</p>
@@ -88,7 +88,7 @@ class FriendsList extends React.Component {
                   </div>
                     <div className="col-sm-4 offset-sm-4">
                       <div className="card text-center">
-                        <img src="./img/jesica.jpg" class="card-img-top" alt="..." />
+                        <img src="./img/jesica.jpg" className="card-img-top" alt="..." />
                         <div className="card-body">
                           <h5 className="card-title">Jesica Quinones</h5>
                           <p className="card-text">UMass Amherst 2019</p>
@@ -115,7 +115,7 @@ class Profile extends React.Component {
                     <br></br>
                     <br></br>
                     <center>
-                      <div>
+                      <div className="profile">
                         <img src="./img/aib.jpg"/>
                         </div>
                           <br></br>

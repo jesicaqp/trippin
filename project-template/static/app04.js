@@ -152,7 +152,7 @@ var FriendsList = function (_React$Component2) {
               React.createElement(
                 "div",
                 { className: "card text-center" },
-                React.createElement("img", { src: "./img/arushi.jpg", "class": "card-img-top", alt: "..." }),
+                React.createElement("img", { src: "./img/arushi.jpg", className: "card-img-top", alt: "..." }),
                 React.createElement(
                   "div",
                   { className: "card-body" },
@@ -180,7 +180,7 @@ var FriendsList = function (_React$Component2) {
               React.createElement(
                 "div",
                 { className: "card text-center" },
-                React.createElement("img", { src: "./img/jesica.jpg", "class": "card-img-top", alt: "..." }),
+                React.createElement("img", { src: "./img/jesica.jpg", className: "card-img-top", alt: "..." }),
                 React.createElement(
                   "div",
                   { className: "card-body" },
@@ -238,7 +238,7 @@ var Profile = function (_React$Component3) {
           null,
           React.createElement(
             "div",
-            null,
+            { className: "profile" },
             React.createElement("img", { src: "./img/aib.jpg" })
           ),
           React.createElement("br", null),
