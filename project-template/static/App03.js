@@ -23,6 +23,7 @@ var EventRow = function EventRow(props) {
       "div",
       { className: "viewEvent" },
       "Name: ",
+      React.createElement("br", null),
       props.event.name
     ),
     React.createElement("br", null),
@@ -30,6 +31,7 @@ var EventRow = function EventRow(props) {
       "div",
       { className: "viewEvent" },
       "Location: ",
+      React.createElement("br", null),
       props.event.location
     ),
     React.createElement("br", null),
@@ -37,6 +39,7 @@ var EventRow = function EventRow(props) {
       "div",
       { className: "viewEvent" },
       "Date: ",
+      React.createElement("br", null),
       props.event.eventdate
     ),
     React.createElement("br", null),
@@ -44,6 +47,7 @@ var EventRow = function EventRow(props) {
       "div",
       { className: "viewEvent" },
       "Description: ",
+      React.createElement("br", null),
       props.event.description
     ),
     React.createElement("br", null),
@@ -51,6 +55,8 @@ var EventRow = function EventRow(props) {
       "div",
       { className: "viewEvent" },
       "Attendees: ",
+      React.createElement("br", null),
+      " ",
       props.event.attendees
     ),
     React.createElement("br", null),
@@ -308,13 +314,6 @@ var View = function (_React$Component2) {
             "button",
             { className: "btn btn-info", type: "submit" },
             "Edit"
-          ),
-          React.createElement("br", null),
-          React.createElement("br", null),
-          React.createElement(
-            "a",
-            { className: "btn btn-info", href: "/view02.html", role: "button" },
-            "Calendar"
           )
         )
       );

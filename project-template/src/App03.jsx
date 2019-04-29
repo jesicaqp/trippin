@@ -9,11 +9,11 @@ var contentNode2 = document.getElementById("search");
 
 const EventRow = (props) => (
   <ul className="data">
-    <div className="viewEvent">Name: {props.event.name}</div><br></br>
-    <div className="viewEvent">Location: {props.event.location}</div><br></br>
-    <div className="viewEvent">Date: {props.event.eventdate}</div><br></br>
-    <div className="viewEvent">Description: {props.event.description}</div><br></br>
-    <div className="viewEvent">Attendees: {props.event.attendees}</div><br></br>
+    <div className="viewEvent">Name: <br></br>{props.event.name}</div><br></br>
+    <div className="viewEvent">Location: <br></br>{props.event.location}</div><br></br>
+    <div className="viewEvent">Date: <br></br>{props.event.eventdate}</div><br></br>
+    <div className="viewEvent">Description: <br></br>{props.event.description}</div><br></br>
+    <div className="viewEvent">Attendees: <br></br> {props.event.attendees}</div><br></br>
     <br></br>
   </ul>
 );
@@ -180,9 +180,6 @@ loadData(){
                 <EventTable events={this.state.events} />
                 <hr />
                 <button className="btn btn-info" type="submit">Edit</button>
-                <br></br>
-                <br></br>
-                <a className="btn btn-info" href="/view02.html" role="button">Calendar</a>
                 </div>
              </div>   
           );
