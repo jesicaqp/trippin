@@ -111,8 +111,31 @@ class Profile extends React.Component {
               render(){
               return (
                 <div>
-                    <h1>Profile</h1>
-                    </div>
+                    <h1>Aibhlin Fitzpatrick</h1>
+                    <br></br>
+                    <br></br>
+                    <center>
+                      <div>
+                        <img src="./img/aib.jpg"/>
+                        </div>
+                          <br></br>
+                          <h3>UMass Amherst 2020</h3>
+                          <br></br>
+                          <h4><b>Email:</b> afitzpatrick@umass.edu</h4>
+                          <h4><b>Age:</b> 20 years old.</h4>
+                          <h4><b>Interests:</b> Outdoors, Technology, Sports, Social Events. </h4>
+                          <br></br>
+                          <div className="row">
+                             <div className="col-md"> 
+                                <button type="button" className="btn btn-info" >Edit Profile</button>
+                            </div>
+                            <div className="col-md">
+                              <button type="button" className="btn btn-info" >Settings</button>
+                            </div>
+                            </div>
+                            </center>
+                        </div>
+              
                   );
                 }
               }

@@ -229,7 +229,78 @@ var Profile = function (_React$Component3) {
         React.createElement(
           "h1",
           null,
-          "Profile"
+          "Aibhlin Fitzpatrick"
+        ),
+        React.createElement("br", null),
+        React.createElement("br", null),
+        React.createElement(
+          "center",
+          null,
+          React.createElement(
+            "div",
+            null,
+            React.createElement("img", { src: "./img/aib.jpg" })
+          ),
+          React.createElement("br", null),
+          React.createElement(
+            "h3",
+            null,
+            "UMass Amherst 2020"
+          ),
+          React.createElement("br", null),
+          React.createElement(
+            "h4",
+            null,
+            React.createElement(
+              "b",
+              null,
+              "Email:"
+            ),
+            " afitzpatrick@umass.edu"
+          ),
+          React.createElement(
+            "h4",
+            null,
+            React.createElement(
+              "b",
+              null,
+              "Age:"
+            ),
+            " 20 years old."
+          ),
+          React.createElement(
+            "h4",
+            null,
+            React.createElement(
+              "b",
+              null,
+              "Interests:"
+            ),
+            " Outdoors, Technology, Sports, Social Events. "
+          ),
+          React.createElement("br", null),
+          React.createElement(
+            "div",
+            { className: "row" },
+            React.createElement(
+              "div",
+              { className: "col-md" },
+              React.createElement(
+                "button",
+                { type: "button", className: "btn btn-info" },
+                "Edit Profile"
+              )
+            ),
+            React.createElement(
+              "div",
+              { className: "col-md" },
+              React.createElement(
+                "button",
+                { type: "button", className: "btn btn-info" },
+                "Settings"
+              )
+            )
+          )
         )
       );
     }
