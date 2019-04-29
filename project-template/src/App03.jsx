@@ -136,19 +136,19 @@ let MyComponent  = React.createClass({
   
   class View extends React.Component {
     constructor() {
-	     super();
-	     //this.viewNewevent = this.viewNewevent.bind(this);
-	     this.loadData = this.loadData.bind(this);
-	     
-	     this.state = {
-	      events: [],
-	     };
+       super();
+       //this.viewNewevent = this.viewNewevent.bind(this);
+       this.loadData = this.loadData.bind(this);
+       
+       this.state = {
+        events: [],
+       };
     
     }
 
     componentDidMount() {
-    	this.loadData();
-  	}
+      this.loadData();
+    }
 
  
 loadData(){
@@ -157,7 +157,7 @@ loadData(){
       .then(res => {
         if (res.ok) {
           res.json().then( json => {
-          	let events = [];
+            let events = [];
             json.records.forEach(event => {
               events.push(
                 event
@@ -220,3 +220,4 @@ class SearchBar extends React.Component {
 
 ReactDOM.render(<MyComponent />, contentNode);
 ReactDOM.render(<SearchBar />, contentNode2);
+
