@@ -32,10 +32,18 @@ db.events.remove({});
 db.events.insert([
 {
 	"name" : "Trip to the cape", 
-	"location" : "This event will take place in Cape Cod, Massachusetts.", 
+	"location" : "Cape Cod, Massachusetts.", 
 	"eventdate" : "03/25/2019", 
 	"description" : "A week of fun and relaxation for students before the second round of midterms. We will be celebrating the start of spring and the start of warmer temperatures and sunny skies.", 
-	"attendees" : "Jesica Quinones, Aibhlin Fitzpatrick, Arushi Ahmed.",
+	"attendees" : "Aibhlin Fitzpatrick,Jesica Quinones, Arushi Ahmed.",
+},
+
+{ 
+	"name" : "Trip to Disney World", 
+	"location" : "Orlando, Florida.", 
+	"eventdate" : "07/04/2019", 
+	"description" : "Visiting the happiest place on 4th of July before starting my new job in New York City.", 
+	"attendees" : "Aibhlin Fitzpatrick, Jesica Quinones, Arushi Ahmed.",
 },
 
 ]);

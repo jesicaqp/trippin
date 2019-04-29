@@ -91,7 +91,6 @@ h1
     
     }
    
-
      #column 
 	{
     	float: left;
@@ -128,5 +127,13 @@ h1
 
 	img
 	{
-		width: 18rem;
+		width: 10rem;
+	}
+
+	.line
+	{
+		border-bottom: 2px solid black;
+		width: auto;
+		float: center;
+		text-align: center;
 	}

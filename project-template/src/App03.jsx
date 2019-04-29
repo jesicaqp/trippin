@@ -14,6 +14,7 @@ const EventRow = (props) => (
     <div className="viewEvent">Date: <br></br>{props.event.eventdate}</div><br></br>
     <div className="viewEvent">Description: <br></br>{props.event.description}</div><br></br>
     <div className="viewEvent">Attendees: <br></br> {props.event.attendees}</div><br></br>
+    <div className="line"></div>
     <br></br>
   </ul>
 );

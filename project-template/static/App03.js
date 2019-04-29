@@ -60,6 +60,7 @@ var EventRow = function EventRow(props) {
       props.event.attendees
     ),
     React.createElement("br", null),
+    React.createElement("div", { className: "line" }),
     React.createElement("br", null)
   );
 };
