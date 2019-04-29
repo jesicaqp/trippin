@@ -72,6 +72,32 @@ class FriendsList extends React.Component {
             return (
               <div>
                   <h1>Friends</h1>
+                  <br></br>
+                  <br></br>
+                <center>
+                  <div className="row">
+                  <div className="col-sm-4">
+                    <div className="card text-center">
+                      <img src="./img/arushi.jpg" class="card-img-top" alt="..." />
+                      <div className="card-body">
+                        <h5 className="card-title">Arushi Ahmed</h5>
+                        <p className="card-text">UMass Amherst 2020</p>
+                        <button type="button" className="btn btn-info" >View Profile</button>
+                      </div>
+                    </div>
+                  </div>
+                    <div className="col-sm-4 offset-sm-4">
+                      <div className="card text-center">
+                        <img src="./img/jesica.jpg" class="card-img-top" alt="..." />
+                        <div className="card-body">
+                          <h5 className="card-title">Jesica Quinones</h5>
+                          <p className="card-text">UMass Amherst 2019</p>
+                          <button type="button" className="btn btn-info">View Profile</button>
+                        </div>
+                      </div>
+                    </div>
+                    </div>
+                </center> 
               </div>
 
             );

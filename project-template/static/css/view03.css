@@ -119,3 +119,14 @@ h1
 	{
 		text-align: center;
 	}
+
+	.card
+	{
+		margin: 0;
+		width: 18rem;
+	}
+
+	img
+	{
+		width: 18rem;
+	}

@@ -137,6 +137,72 @@ var FriendsList = function (_React$Component2) {
           "h1",
           null,
           "Friends"
+        ),
+        React.createElement("br", null),
+        React.createElement("br", null),
+        React.createElement(
+          "center",
+          null,
+          React.createElement(
+            "div",
+            { className: "row" },
+            React.createElement(
+              "div",
+              { className: "col-sm-4" },
+              React.createElement(
+                "div",
+                { className: "card text-center" },
+                React.createElement("img", { src: "./img/arushi.jpg", "class": "card-img-top", alt: "..." }),
+                React.createElement(
+                  "div",
+                  { className: "card-body" },
+                  React.createElement(
+                    "h5",
+                    { className: "card-title" },
+                    "Arushi Ahmed"
+                  ),
+                  React.createElement(
+                    "p",
+                    { className: "card-text" },
+                    "UMass Amherst 2020"
+                  ),
+                  React.createElement(
+                    "button",
+                    { type: "button", className: "btn btn-info" },
+                    "View Profile"
+                  )
+                )
+              )
+            ),
+            React.createElement(
+              "div",
+              { className: "col-sm-4 offset-sm-4" },
+              React.createElement(
+                "div",
+                { className: "card text-center" },
+                React.createElement("img", { src: "./img/jesica.jpg", "class": "card-img-top", alt: "..." }),
+                React.createElement(
+                  "div",
+                  { className: "card-body" },
+                  React.createElement(
+                    "h5",
+                    { className: "card-title" },
+                    "Jesica Quinones"
+                  ),
+                  React.createElement(
+                    "p",
+                    { className: "card-text" },
+                    "UMass Amherst 2019"
+                  ),
+                  React.createElement(
+                    "button",
+                    { type: "button", className: "btn btn-info" },
+                    "View Profile"
+                  )
+                )
+              )
+            )
+          )
         )
       );
     }
