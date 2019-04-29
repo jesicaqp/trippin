@@ -4,11 +4,11 @@ Trippin
 
 # Overview
 
-Our application provides users with an interactive platform where they can collaborate with their friends/peers to plan group events and know when there friends/peers are busy or free. Once implemented, they will have the ability to collaborate on events and see their friend’s calendars 
+Our application provides users with an interactive platform where they can collaborate with their friends/peers to plan group events and know when there friends/peers are busy or free. Once implemented, they will have the ability to collaborate on events and see their friend’s calendars. 
 
 # Team Members
 1. Arushi Ahmed
-2. Aibhlin Fitzpatrick, 
+2. Aibhlin Fitzpatrick 
 3. Jesica Quinones
 
 # Application Initialization
