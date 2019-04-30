@@ -111,7 +111,7 @@ class Profile extends React.Component {
               render(){
               return (
                 <div>
-                    <h1>Aibhlin Fitzpatrick</h1>
+                    <h1>Profile</h1>
                     <br></br>
                     <br></br>
                     <center>
@@ -119,6 +119,7 @@ class Profile extends React.Component {
                         <img src="./img/aib.jpg"/>
                         </div>
                           <br></br>
+                          <h3>Aibhlin Fitzpatrick</h3>
                           <h3>UMass Amherst 2020</h3>
                           <br></br>
                           <h4><b>Email:</b> afitzpatrick@umass.edu</h4>

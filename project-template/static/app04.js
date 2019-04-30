@@ -229,7 +229,7 @@ var Profile = function (_React$Component3) {
         React.createElement(
           "h1",
           null,
-          "Aibhlin Fitzpatrick"
+          "Profile"
         ),
         React.createElement("br", null),
         React.createElement("br", null),
@@ -242,6 +242,11 @@ var Profile = function (_React$Component3) {
             React.createElement("img", { src: "./img/aib.jpg" })
           ),
           React.createElement("br", null),
+          React.createElement(
+            "h3",
+            null,
+            "Aibhlin Fitzpatrick"
+          ),
           React.createElement(
             "h3",
             null,
